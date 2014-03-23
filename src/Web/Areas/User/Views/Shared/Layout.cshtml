@@ -1,0 +1,63 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="pt-br">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+
+    @Styles.Render("~/Styles/themes/metronic")
+    @RenderSection("head", false);
+    <style>
+        #forgot-password {
+            margin-top: 14px;
+            float: right;
+        }
+
+            #forgot-password a {
+                color: #577386;
+                font-size: 15px;
+            }
+
+        .clear {
+            clear: both;
+        }
+        .validation-summary-errors li{  
+        }
+    </style>
+    <link rel="shortcut icon" href="favicon.ico" />
+</head>
+
+<body class="login">
+    <div class="content">
+        @RenderBody()
+    </div>
+
+    <div class="copyright">
+        <span class="actual-year">@DateTime.Now.Year</span> &copy;
+    </div>
+
+    <!-- SCRIPTS -->
+    @Scripts.Render("~/Content/themes/metronic/scripts/global")
+    @Scripts.Render("~/Content/themes/metronic/scripts/login.js")
+    <script> digdin.init(); </script>
+
+    @RenderSection("Scripts", false);
+
+    <!--[if lt IE 9]>
+        <script src="~/Content/themes/metronic/plugins/excanvas.js"></script>
+        <script src="~/Content/themes/metronic/plugins/respond.js"></script>
+    <![endif]-->
+
+</body>
+<!-- END BODY -->
+</html>

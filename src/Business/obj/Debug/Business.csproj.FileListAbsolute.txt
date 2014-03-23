@@ -1,0 +1,158 @@
+C:\Users\Gabriel\Source\Repos\GTP\src\GTP\Business\obj\Debug\Business.csproj.App.config
+C:\Users\Gabriel\Source\Repos\GTP\src\GTP\Business\obj\Debug\Business.csprojResolveAssemblyReference.cache
+C:\Users\Gabriel\Source\Repos\GTP\src\GTP\Business\bin\Debug\Seed\LanguageSeed.xml
+C:\Users\Gabriel\Source\Repos\GTP\src\GTP\Business\bin\Debug\Business.dll.config
+C:\Users\Gabriel\Source\Repos\GTP\src\GTP\Business\bin\Debug\Business.dll
+C:\Users\Gabriel\Source\Repos\GTP\src\GTP\Business\bin\Debug\Business.pdb
+C:\Users\Gabriel\Source\Repos\GTP\src\GTP\Business\bin\Debug\EntityFramework.dll
+C:\Users\Gabriel\Source\Repos\GTP\src\GTP\Business\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Gabriel\Source\Repos\GTP\src\GTP\Business\bin\Debug\EPPlus.dll
+C:\Users\Gabriel\Source\Repos\GTP\src\GTP\Business\bin\Debug\Microsoft.Threading.Tasks.dll
+C:\Users\Gabriel\Source\Repos\GTP\src\GTP\Business\bin\Debug\Microsoft.Threading.Tasks.Extensions.dll
+C:\Users\Gabriel\Source\Repos\GTP\src\GTP\Business\bin\Debug\Model.dll
+C:\Users\Gabriel\Source\Repos\GTP\src\GTP\Business\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Gabriel\Source\Repos\GTP\src\GTP\Business\bin\Debug\Repository.dll
+C:\Users\Gabriel\Source\Repos\GTP\src\GTP\Business\bin\Debug\SendGridMail.dll
+C:\Users\Gabriel\Source\Repos\GTP\src\GTP\Business\bin\Debug\System.Net.Http.Extensions.dll
+C:\Users\Gabriel\Source\Repos\GTP\src\GTP\Business\bin\Debug\System.Net.Http.Primitives.dll
+C:\Users\Gabriel\Source\Repos\GTP\src\GTP\Business\bin\Debug\Utilities.DataTypes.dll
+C:\Users\Gabriel\Source\Repos\GTP\src\GTP\Business\bin\Debug\log4net.dll
+C:\Users\Gabriel\Source\Repos\GTP\src\GTP\Business\bin\Debug\EntityFramework.Extended.dll
+C:\Users\Gabriel\Source\Repos\GTP\src\GTP\Business\bin\Debug\Model.pdb
+C:\Users\Gabriel\Source\Repos\GTP\src\GTP\Business\bin\Debug\Repository.pdb
+C:\Users\Gabriel\Source\Repos\GTP\src\GTP\Business\bin\Debug\EntityFramework.xml
+C:\Users\Gabriel\Source\Repos\GTP\src\GTP\Business\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Gabriel\Source\Repos\GTP\src\GTP\Business\bin\Debug\EPPlus.xml
+C:\Users\Gabriel\Source\Repos\GTP\src\GTP\Business\bin\Debug\Microsoft.Threading.Tasks.xml
+C:\Users\Gabriel\Source\Repos\GTP\src\GTP\Business\bin\Debug\Microsoft.Threading.Tasks.Extensions.xml
+C:\Users\Gabriel\Source\Repos\GTP\src\GTP\Business\bin\Debug\System.Net.Http.Extensions.xml
+C:\Users\Gabriel\Source\Repos\GTP\src\GTP\Business\bin\Debug\System.Net.Http.Primitives.xml
+C:\Users\Gabriel\Source\Repos\GTP\src\GTP\Business\bin\Debug\Utilities.DataTypes.pdb
+C:\Users\Gabriel\Source\Repos\GTP\src\GTP\Business\bin\Debug\Utilities.DataTypes.xml
+C:\Users\Gabriel\Source\Repos\GTP\src\GTP\Business\bin\Debug\log4net.xml
+C:\Users\Gabriel\Source\Repos\GTP\src\GTP\Business\bin\Debug\EntityFramework.Extended.xml
+C:\Users\Gabriel\Source\Repos\GTP\src\GTP\Business\obj\Debug\Business.dll
+C:\Users\Gabriel\Source\Repos\GTP\src\GTP\Business\obj\Debug\Business.pdb
+C:\Users\Gabriel\Documents\Visual Studio 2013\Projects\CET\Business\bin\Debug\Seed\LanguageSeed.xml
+C:\Users\Gabriel\Documents\Visual Studio 2013\Projects\CET\Business\bin\Debug\Business.dll.config
+C:\Users\Gabriel\Documents\Visual Studio 2013\Projects\CET\Business\bin\Debug\Business.dll
+C:\Users\Gabriel\Documents\Visual Studio 2013\Projects\CET\Business\bin\Debug\Business.pdb
+C:\Users\Gabriel\Documents\Visual Studio 2013\Projects\CET\Business\bin\Debug\EntityFramework.dll
+C:\Users\Gabriel\Documents\Visual Studio 2013\Projects\CET\Business\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Gabriel\Documents\Visual Studio 2013\Projects\CET\Business\bin\Debug\EPPlus.dll
+C:\Users\Gabriel\Documents\Visual Studio 2013\Projects\CET\Business\bin\Debug\Microsoft.Threading.Tasks.dll
+C:\Users\Gabriel\Documents\Visual Studio 2013\Projects\CET\Business\bin\Debug\Microsoft.Threading.Tasks.Extensions.dll
+C:\Users\Gabriel\Documents\Visual Studio 2013\Projects\CET\Business\bin\Debug\Model.dll
+C:\Users\Gabriel\Documents\Visual Studio 2013\Projects\CET\Business\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Gabriel\Documents\Visual Studio 2013\Projects\CET\Business\bin\Debug\Repository.dll
+C:\Users\Gabriel\Documents\Visual Studio 2013\Projects\CET\Business\bin\Debug\SendGridMail.dll
+C:\Users\Gabriel\Documents\Visual Studio 2013\Projects\CET\Business\bin\Debug\System.Net.Http.Extensions.dll
+C:\Users\Gabriel\Documents\Visual Studio 2013\Projects\CET\Business\bin\Debug\System.Net.Http.Primitives.dll
+C:\Users\Gabriel\Documents\Visual Studio 2013\Projects\CET\Business\bin\Debug\Utilities.DataTypes.dll
+C:\Users\Gabriel\Documents\Visual Studio 2013\Projects\CET\Business\bin\Debug\log4net.dll
+C:\Users\Gabriel\Documents\Visual Studio 2013\Projects\CET\Business\bin\Debug\EntityFramework.Extended.dll
+C:\Users\Gabriel\Documents\Visual Studio 2013\Projects\CET\Business\bin\Debug\Model.pdb
+C:\Users\Gabriel\Documents\Visual Studio 2013\Projects\CET\Business\bin\Debug\Repository.pdb
+C:\Users\Gabriel\Documents\Visual Studio 2013\Projects\CET\Business\bin\Debug\EntityFramework.xml
+C:\Users\Gabriel\Documents\Visual Studio 2013\Projects\CET\Business\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Gabriel\Documents\Visual Studio 2013\Projects\CET\Business\bin\Debug\EPPlus.xml
+C:\Users\Gabriel\Documents\Visual Studio 2013\Projects\CET\Business\bin\Debug\Microsoft.Threading.Tasks.xml
+C:\Users\Gabriel\Documents\Visual Studio 2013\Projects\CET\Business\bin\Debug\Microsoft.Threading.Tasks.Extensions.xml
+C:\Users\Gabriel\Documents\Visual Studio 2013\Projects\CET\Business\bin\Debug\System.Net.Http.Extensions.xml
+C:\Users\Gabriel\Documents\Visual Studio 2013\Projects\CET\Business\bin\Debug\System.Net.Http.Primitives.xml
+C:\Users\Gabriel\Documents\Visual Studio 2013\Projects\CET\Business\bin\Debug\Utilities.DataTypes.pdb
+C:\Users\Gabriel\Documents\Visual Studio 2013\Projects\CET\Business\bin\Debug\Utilities.DataTypes.xml
+C:\Users\Gabriel\Documents\Visual Studio 2013\Projects\CET\Business\bin\Debug\log4net.xml
+C:\Users\Gabriel\Documents\Visual Studio 2013\Projects\CET\Business\bin\Debug\EntityFramework.Extended.xml
+C:\Users\Gabriel\Documents\Visual Studio 2013\Projects\CET\Business\obj\Debug\Business.csproj.App.config
+C:\Users\Gabriel\Documents\Visual Studio 2013\Projects\CET\Business\obj\Debug\Business.csprojResolveAssemblyReference.cache
+C:\Users\Gabriel\Documents\Visual Studio 2013\Projects\CET\Business\obj\Debug\Business.dll
+C:\Users\Gabriel\Documents\Visual Studio 2013\Projects\CET\Business\obj\Debug\Business.pdb
+C:\Users\Gabriel\Source\Repos\CET - GWP\src\Business\bin\Debug\Seed\LanguageSeed.xml
+C:\Users\Gabriel\Source\Repos\CET - GWP\src\Business\bin\Debug\Business.dll.config
+C:\Users\Gabriel\Source\Repos\CET - GWP\src\Business\bin\Debug\Business.dll
+C:\Users\Gabriel\Source\Repos\CET - GWP\src\Business\bin\Debug\Business.pdb
+C:\Users\Gabriel\Source\Repos\CET - GWP\src\Business\bin\Debug\EntityFramework.dll
+C:\Users\Gabriel\Source\Repos\CET - GWP\src\Business\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Gabriel\Source\Repos\CET - GWP\src\Business\bin\Debug\EPPlus.dll
+C:\Users\Gabriel\Source\Repos\CET - GWP\src\Business\bin\Debug\Microsoft.Threading.Tasks.dll
+C:\Users\Gabriel\Source\Repos\CET - GWP\src\Business\bin\Debug\Microsoft.Threading.Tasks.Extensions.dll
+C:\Users\Gabriel\Source\Repos\CET - GWP\src\Business\bin\Debug\Model.dll
+C:\Users\Gabriel\Source\Repos\CET - GWP\src\Business\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Gabriel\Source\Repos\CET - GWP\src\Business\bin\Debug\Repository.dll
+C:\Users\Gabriel\Source\Repos\CET - GWP\src\Business\bin\Debug\SendGridMail.dll
+C:\Users\Gabriel\Source\Repos\CET - GWP\src\Business\bin\Debug\System.Net.Http.Extensions.dll
+C:\Users\Gabriel\Source\Repos\CET - GWP\src\Business\bin\Debug\System.Net.Http.Primitives.dll
+C:\Users\Gabriel\Source\Repos\CET - GWP\src\Business\bin\Debug\Utilities.DataTypes.dll
+C:\Users\Gabriel\Source\Repos\CET - GWP\src\Business\bin\Debug\log4net.dll
+C:\Users\Gabriel\Source\Repos\CET - GWP\src\Business\bin\Debug\EntityFramework.Extended.dll
+C:\Users\Gabriel\Source\Repos\CET - GWP\src\Business\bin\Debug\Model.pdb
+C:\Users\Gabriel\Source\Repos\CET - GWP\src\Business\bin\Debug\Repository.pdb
+C:\Users\Gabriel\Source\Repos\CET - GWP\src\Business\bin\Debug\EntityFramework.xml
+C:\Users\Gabriel\Source\Repos\CET - GWP\src\Business\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Gabriel\Source\Repos\CET - GWP\src\Business\bin\Debug\EPPlus.xml
+C:\Users\Gabriel\Source\Repos\CET - GWP\src\Business\bin\Debug\Microsoft.Threading.Tasks.xml
+C:\Users\Gabriel\Source\Repos\CET - GWP\src\Business\bin\Debug\Microsoft.Threading.Tasks.Extensions.xml
+C:\Users\Gabriel\Source\Repos\CET - GWP\src\Business\bin\Debug\System.Net.Http.Extensions.xml
+C:\Users\Gabriel\Source\Repos\CET - GWP\src\Business\bin\Debug\System.Net.Http.Primitives.xml
+C:\Users\Gabriel\Source\Repos\CET - GWP\src\Business\bin\Debug\Utilities.DataTypes.pdb
+C:\Users\Gabriel\Source\Repos\CET - GWP\src\Business\bin\Debug\Utilities.DataTypes.xml
+C:\Users\Gabriel\Source\Repos\CET - GWP\src\Business\bin\Debug\log4net.xml
+C:\Users\Gabriel\Source\Repos\CET - GWP\src\Business\bin\Debug\EntityFramework.Extended.xml
+C:\Users\Gabriel\Source\Repos\CET - GWP\src\Business\obj\Debug\Business.csproj.App.config
+C:\Users\Gabriel\Source\Repos\CET - GWP\src\Business\obj\Debug\Business.csprojResolveAssemblyReference.cache
+C:\Users\Gabriel\Source\Repos\CET - GWP\src\Business\obj\Debug\Business.dll
+C:\Users\Gabriel\Source\Repos\CET - GWP\src\Business\obj\Debug\Business.pdb
+C:\Users\Gabriel\Source\Repos\CET - GWP\src\Business\bin\Debug\AWSSDK.dll
+C:\Users\Gabriel\Source\Repos\CET - GWP\src\Business\bin\Debug\RestSharp.dll
+C:\Users\Gabriel\Source\Repos\CET - GWP\src\Business\bin\Debug\Twilio.Api.dll
+C:\Users\Gabriel\Source\Repos\CET - GWP\src\Business\bin\Debug\AWSSDK.pdb
+C:\Users\Gabriel\Source\Repos\CET - GWP\src\Business\bin\Debug\RestSharp.xml
+C:\Users\Gabriel\Source\Repos\CET - GWP\src\Business\bin\Debug\Twilio.Api.pdb
+C:\Users\Gabriel\Source\Repos\CET - GWP\src\Business\bin\Debug\Twilio.Api.xml
+C:\Users\Gabriel\Source\Repos\CET - GWP\src\Business\bin\Debug\GoogleMapsApi.dll
+C:\Users\Gabriel\Source\Repos\CET - GWP\src\Business\bin\Debug\GoogleMapsApi.pdb
+C:\Users\Gabriel\Source\Repos\CET - GWP\src\Business\bin\Debug\GoogleMapsApi.xml
+D:\CET - GWP\src\Business\obj\Debug\Business.csproj.App.config
+D:\CET - GWP\src\Business\obj\Debug\Business.csprojResolveAssemblyReference.cache
+D:\CET - GWP\src\Business\obj\Debug\Business.dll
+D:\CET - GWP\src\Business\obj\Debug\Business.pdb
+D:\CET - GWP\src\Business\bin\Debug\Seed\LanguageSeed.xml
+D:\CET - GWP\src\Business\bin\Debug\Business.dll.config
+D:\CET - GWP\src\Business\bin\Debug\Business.dll
+D:\CET - GWP\src\Business\bin\Debug\Business.pdb
+D:\CET - GWP\src\Business\bin\Debug\AWSSDK.dll
+D:\CET - GWP\src\Business\bin\Debug\EntityFramework.dll
+D:\CET - GWP\src\Business\bin\Debug\EntityFramework.SqlServer.dll
+D:\CET - GWP\src\Business\bin\Debug\EPPlus.dll
+D:\CET - GWP\src\Business\bin\Debug\GoogleMapsApi.dll
+D:\CET - GWP\src\Business\bin\Debug\Microsoft.Threading.Tasks.dll
+D:\CET - GWP\src\Business\bin\Debug\Microsoft.Threading.Tasks.Extensions.dll
+D:\CET - GWP\src\Business\bin\Debug\Model.dll
+D:\CET - GWP\src\Business\bin\Debug\Newtonsoft.Json.dll
+D:\CET - GWP\src\Business\bin\Debug\Repository.dll
+D:\CET - GWP\src\Business\bin\Debug\RestSharp.dll
+D:\CET - GWP\src\Business\bin\Debug\SendGridMail.dll
+D:\CET - GWP\src\Business\bin\Debug\System.Net.Http.Extensions.dll
+D:\CET - GWP\src\Business\bin\Debug\System.Net.Http.Primitives.dll
+D:\CET - GWP\src\Business\bin\Debug\Twilio.Api.dll
+D:\CET - GWP\src\Business\bin\Debug\log4net.dll
+D:\CET - GWP\src\Business\bin\Debug\EntityFramework.Extended.dll
+D:\CET - GWP\src\Business\bin\Debug\Model.pdb
+D:\CET - GWP\src\Business\bin\Debug\AWSSDK.pdb
+D:\CET - GWP\src\Business\bin\Debug\EntityFramework.xml
+D:\CET - GWP\src\Business\bin\Debug\EntityFramework.SqlServer.xml
+D:\CET - GWP\src\Business\bin\Debug\EPPlus.xml
+D:\CET - GWP\src\Business\bin\Debug\GoogleMapsApi.pdb
+D:\CET - GWP\src\Business\bin\Debug\GoogleMapsApi.xml
+D:\CET - GWP\src\Business\bin\Debug\Microsoft.Threading.Tasks.xml
+D:\CET - GWP\src\Business\bin\Debug\Microsoft.Threading.Tasks.Extensions.xml
+D:\CET - GWP\src\Business\bin\Debug\RestSharp.xml
+D:\CET - GWP\src\Business\bin\Debug\System.Net.Http.Extensions.xml
+D:\CET - GWP\src\Business\bin\Debug\System.Net.Http.Primitives.xml
+D:\CET - GWP\src\Business\bin\Debug\Twilio.Api.pdb
+D:\CET - GWP\src\Business\bin\Debug\Twilio.Api.xml
+D:\CET - GWP\src\Business\bin\Debug\Utilities.DataTypes.pdb
+D:\CET - GWP\src\Business\bin\Debug\Utilities.DataTypes.xml
+D:\CET - GWP\src\Business\bin\Debug\log4net.xml
+D:\CET - GWP\src\Business\bin\Debug\EntityFramework.Extended.xml

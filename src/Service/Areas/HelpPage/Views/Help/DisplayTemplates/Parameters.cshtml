@@ -1,0 +1,44 @@
+@using System.Collections.ObjectModel
+@using System.Web.Http.Description
+@using System.Threading
+@model Collection<ApiParameterDescription>
+
+<table class="help-page-table">
+    <thead>
+    <tr><th>Nome</th><th>Descrição</th><th>Informações Adicionais</th></tr>
+    </thead>
+    <tbody>
+    @foreach (ApiParameterDescription parameter in Model)
+    {
+        string parameterDocumentation = parameter.Documentation != null ?
+            parameter.Documentation :
+            "Sem documentação Disponível.";
+
+        // Don't show CancellationToken because it's a special parameter
+        if (parameter.ParameterDescriptor == null || 
+            (parameter.ParameterDescriptor != null &&
+            !typeof(CancellationToken).IsAssignableFrom(parameter.ParameterDescriptor.ParameterType)))
+        {
+            <tr>
+                <td class="parameter-name"><b>@parameter.Name</b></td>
+                <td class="parameter-documentation"><pre>@parameterDocumentation</pre></td>
+                <td class="parameter-source">
+                    @switch (parameter.Source)
+                    {
+                        case ApiParameterSource.FromBody:
+                            <p>definir esse parâmetro no <b>corpo</b> da requisição.</p>
+                            break;
+                        case ApiParameterSource.FromUri:
+                            <p>definir esse parâmetro na <b>URI</b> da requisição.</p>
+                            break;
+                        case ApiParameterSource.Unknown:
+                        default:
+                            <p>nenhum.</p>
+                            break;
+                    }
+                </td>
+            </tr>
+        }
+    }
+    </tbody>
+</table>

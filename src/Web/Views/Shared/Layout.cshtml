@@ -1,0 +1,197 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="pt-br">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+
+    @Styles.Render("~/Styles/themes/metronic")
+
+    @RenderSection("head", false);
+
+    @*@{
+        if (!Request.IsLocal)
+        {
+        <script type='text/javascript'>
+            (function (d, t) {
+                var bh = d.createElement(t), s = d.getElementsByTagName(t)[0];
+                bh.type = 'text/javascript';
+                bh.src = '//www.bugherd.com/sidebarv2.js?apikey=9zvx15kagxba5fkdozzd2g';
+                s.parentNode.insertBefore(bh, s);
+            })(document, 'script');
+        </script>
+        }
+    }*@
+    <link rel="shortcut icon" href="favicon.ico" />
+</head>
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+<body class="fixed-top">
+    <!-- BEGIN HEADER -->
+    <div class="header navbar navbar-inverse navbar-fixed-top">
+        <!-- BEGIN TOP NAVIGATION BAR -->
+        <div class="navbar-inner">
+            <div class="container-fluid">
+                <!-- BEGIN LOGO -->
+                <a class="brand" href="@Url.Action("Index", "Dashboard", new { Area = "GTP" })">
+                    @*<img src="@Url.Content("~/Content/images/gtp-logo.png")" alt="logo" />*@
+                </a>
+
+                <ul class="nav">
+                    <li>
+                        @Html.ActionLink("Ocorrencias", "Index", "Ocorrencia", new { Area = "Ocorrencias" }, null)
+                    </li>
+                </ul>
+                <!-- END LOGO -->
+                <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+                <a href="javascript:;" class="btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
+                    <img src="@Url.Content("~/Content/themes/metronic/img/menu-toggler.png")" alt="" />
+                </a>
+                <!-- END RESPONSIVE MENU TOGGLER -->
+                <!-- BEGIN TOP NAVIGATION MENU -->
+                <ul class="nav pull-right">
+                    <li class="dropdown user">
+                        <a href="#" style="height: 29px; line-height: 29px;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                            <span class="username">@ViewBag.UserName</span>
+                            <i class="icon-angle-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="@Url.Action("Edit", "User", new { Area = "User", id = ViewBag.UserId })"><i class="icon-edit"></i>Editar Dados</a>
+                                <a href="@Url.Action("Logout", "Login", new { Area = "User" })"><i class="icon-key"></i>Deslogar</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- END TOP NAVIGATION MENU -->
+            </div>
+        </div>
+        <!-- END TOP NAVIGATION BAR -->
+    </div>
+    <!-- END HEADER -->
+
+    <div class="page-container sidebar-closed">
+
+        <div class="page-sidebar nav-collapse collapse">
+
+            <!-- SIDEBAR MENU -->
+            <ul>
+                <li>
+                    <div class="sidebar-toggler hidden-phone"></div>
+                </li>
+                <!--Veículos-->
+                <!--Financeiro-->
+            </ul>
+        </div>
+
+        <div class="page-content">
+            <div class="container-fluid">
+                <!-- BEGIN PAGE HEADER-->
+                <div class="row-fluid">
+                    <div class="span12">
+                        <!-- BEGIN STYLE CUSTOMIZER -->
+                        @* <div class="color-panel hidden-phone">
+                                <div class="color-mode-icons icon-color"></div>
+                                <div class="color-mode-icons icon-color-close"></div>
+                                <div class="color-mode">
+                                    <p>THEME COLOR</p>
+                                    <ul class="inline">
+                                        <li class="color-black current color-default" data-style="default"></li>
+                                        <li class="color-blue" data-style="blue"></li>
+                                        <li class="color-brown" data-style="brown"></li>
+                                        <li class="color-purple" data-style="purple"></li>
+                                        <li class="color-white color-light" data-style="light"></li>
+                                    </ul>
+                                    <label class="hidden-phone">
+                                        <input type="checkbox" class="header" checked value="" />
+                                        <span class="color-mode-label">Fixed Header</span>
+                                    </label>
+                                </div>
+                            </div>*@
+                        <!-- END BEGIN STYLE CUSTOMIZER -->
+                        <!-- TITLE & BREADCRUMB-->
+                        @RenderSection("Breadcrumb")
+
+                    </div>
+                </div>
+
+                @RenderBody()
+
+            </div>
+            <!-- END PAGE CONTAINER-->
+        </div>
+        <!-- END PAGE -->
+    </div>
+    <!-- END CONTAINER -->
+    <!-- BEGIN FOOTER -->
+    <div class="footer">
+        <span class="actual-year"></span>&copy;
+        <div class="span pull-right">
+            <span class="go-top"><i class="icon-angle-up"></i></span>
+        </div>
+    </div>
+
+    @Scripts.Render("~/Content/themes/metronic/scripts/global")
+    @RenderSection("Scripts", false);
+    <script src="@Url.Content("~/signalr/hubs")"></script>
+
+    <script>
+        var recognition = new webkitSpeechRecognition();
+        recognition.lang = "pt-BR";
+        var rec = false;
+        $(document).keypress(function (e) {
+            if (e.ctrlKey && e.keyCode == 17) {
+                if (rec) {
+                    rec = false;
+                    recognition.stop();
+                } else {
+                    rec = true;
+                    recognition.start();
+                }
+            }
+        });
+
+        recognition.onresult = function (event) {
+            for (var i = event.resultIndex; i < event.results.length; ++i) {
+                if (event.results[i].isFinal) {
+                    switch (event.results[i][0].transcript) {
+                        case 'dashboard':
+                            recognition.stop();
+                            window.location.href = "@Url.Action("Index2", "Dashboard", new { Area = "GTP" })";
+                            break;
+                        default:
+                            alert('Não consegui enteder o que você falou =(');
+                    }
+                }
+            }
+        };
+
+        $('.actual-year').html(new Date().getFullYear());
+        jQuery(document).ready(function () {
+            App.init(); // initlayout and core plugins
+            //Index.init();
+            //Index.initJQVMAP(); // init index page's custom scripts
+            //Index.initCalendar(); // init index page's custom scripts
+            //Index.initCharts(); // init index page's custom scripts
+            //Index.initChat();
+            //Index.initMiniCharts();
+            //Index.initDashboardDaterange();
+            //Index.initIntro();
+        });
+    </script>
+
+    <!-- END JAVASCRIPTS -->
+</body>
+
+<!-- END BODY -->
+</html>

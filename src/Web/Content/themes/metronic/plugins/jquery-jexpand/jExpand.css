@@ -1,0 +1,10 @@
+#report { border-collapse:collapse; width:100%; }
+#report h4 { margin:0px; padding:0px; font-family:'Open Sans'; font-weight:400; }
+#report img { float:right; }
+#report ul { margin:10px 0 10px 40px; padding:0px; }
+#report ul a { color:#fff; }
+#report th { background:#2195c9; color:#fff; padding:6px 15px; text-align:left; font-family:'Open Sans'; font-weight:400; font-size:14px; }
+#report td { background:#27a9e3; color:#fff; padding:6px 15px; }
+#report tr.odd td { background:#fff url(img/row_bkg.png) repeat-x scroll center left; cursor:pointer; }
+#report div.arrow { background:transparent url(img/arrows.png) no-repeat scroll 0px -16px; width:16px; height:16px; display:block; }
+#report div.up { background-position:0px 0px; }

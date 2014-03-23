@@ -1,0 +1,7 @@
+﻿@model AuthLevelViewModel
+<label class="checkbox">
+    @Html.CheckBoxFor(a => a.IsSelected)
+    <span>
+    @Model.Name</span>
+    @Html.HiddenFor(a => a.Id)
+</label>

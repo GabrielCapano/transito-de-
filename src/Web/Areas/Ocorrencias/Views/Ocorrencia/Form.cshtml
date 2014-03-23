@@ -1,0 +1,205 @@
+﻿@model Web.Areas.Ocorrencias.Models.OcorrenciaViewModel
+@{
+    ViewBag.Title = "Ocorrência";
+    var isEdit = (bool)ViewBag.isEdit;
+    ViewBag.FormType = isEdit ? "Editar" : "Criar";
+}
+
+@section Breadcrumb
+{
+    <h3>
+        <span>Ocorrência</span>
+        <small>@ViewBag.FormType</small>
+    </h3>
+    <ul class="breadcrumb">
+        <li>
+            <i class="icon-home"></i>
+            <a href="@Url.Action("Index", "Dashboard", new { Area = "GTP" })">Home</a>
+            <i class="icon-angle-right"></i>
+        </li>
+        <li>
+            <a href="@Url.Action("Index")">Ocorrência</a>
+            <i class="icon-angle-right"></i>
+        </li>
+        <li><a href="#">@ViewBag.FormType</a></li>
+    </ul>
+}
+
+
+@section Scripts
+{
+    <script>
+        digdin.init();
+
+        var returnFunc = function (data, resp) {
+            if (data.Status)
+                window.location.href = '@Url.Action("Index")';
+        };        
+    </script>
+}
+<div class="row-fluid">
+    <div class="span12">
+        <div class="portlet box blue">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="icon-reorder"></i>
+                    <span class="hidden-480">@ViewBag.Title</span>
+                </div>
+            </div>
+            <div class="portlet-body form tab-content tab-pane">
+                @using (Ajax.BeginForm("Save", "Ocorrencia", new AjaxOptions { HttpMethod = "Post" }, new { @class = "form-horizontal" }))
+                {
+                    
+                    @Html.ValidationSummary()
+                    
+                    @Html.AntiForgeryToken()
+
+                    @Html.HiddenFor(a => a.Id)
+                    @Html.HiddenFor(a => a.LastUpdated)
+                    @Html.HiddenFor(a => a.CreatedDate)
+                    @Html.HiddenFor(a => a.UpdatedBy)
+                    @Html.HiddenFor(a => a.CreatedBy)
+
+                    @Html.HiddenFor(a => a.Local)
+                    @Html.HiddenFor(a => a.Sentido)
+                    @Html.HiddenFor(a => a.Pista)
+                    @Html.HiddenFor(a => a.Faixa)
+                    @Html.HiddenFor(a => a.Descricao)
+                    @Html.HiddenFor(a => a.Resumo)
+                    @Html.HiddenFor(a => a.RespostaPrestador)
+                    @Html.HiddenFor(a => a.InicioOcorrencia)
+                    @Html.HiddenFor(a => a.TotalFaixas)
+                    @Html.HiddenFor(a => a.FkUser)
+                    @Html.HiddenFor(a => a.Rate)
+                    @Html.HiddenFor(a => a.FkPhotoDocument)
+                    @Html.HiddenFor(a => a.FkCodigoOcorrencia)
+                    
+                    <div class="row-fluid">
+                        <div class="span12">
+                            <div class="control-group">
+                                @Html.LabelFor(a => a.Local, new { @class = "control-label" })                                
+                                <div class="controls text">
+                                    @Html.TextBox("txtLocal",@Model.Local + " - " + @Model.Numero, new { @class = "span12", @readonly = "readonly"})
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row-fluid">
+                        <div class="span12">
+                            <div class="control-group">
+                                @Html.LabelFor(a => a.Sentido, new { @class = "control-label" })
+                                <div class="controls">
+                                    @Html.TextBox("txtSentido",@Model.Sentido.Trim(), new { @class = "span12", @readonly = "readonly"})                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row-fluid">
+                        <div class="span12">
+                            <div class="control-group">
+                                @Html.LabelFor(a => a.Resumo, new { @class = "control-label" })
+                                <div class="controls">
+                                    @Html.TextBox("txtResumo",@Model.Resumo.Trim(), new { @class = "span12", @readonly = "readonly"})                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row-fluid">
+                        <div class="span12">
+                            <div class="control-group">
+                                @Html.LabelFor(a => a.Descricao, new { @class = "control-label" })
+                                <div class="controls">
+                                   @Html.TextArea("areaDescr",@Model.Descricao.Trim(), new { @class = "span12", @readonly = "readonly"})                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>                    
+                    <div class="row-fluid">
+                        <div class="span12">
+                            <div class="control-group">
+                                @Html.LabelFor(a => a.Pista, new { @class = "control-label" })
+                                <div class="controls">
+                                    @Html.TextBox("txtPista",@Model.Pista.Trim(), new { @class = "span12", @readonly = "readonly"})
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row-fluid">
+                        <div class="span12">
+                            <div class="control-group">
+                                @Html.LabelFor(a => a.Faixa, new { @class = "control-label" })
+                                <div class="controls">
+                                    @Html.TextBox("txtFaixa",@Model.Faixa.Trim(), new { @class = "span12", @readonly = "readonly"})
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row-fluid">
+                        <div class="span12">
+                            <div class="control-group">
+                                @Html.LabelFor(a => a.TotalFaixas, new { @class = "control-label" })
+                                <div class="controls">
+                                    @Html.TextBox("txtTotalFaixas",@Model.TotalFaixas, new { @class = "span12", @readonly = "readonly"})
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row-fluid">
+                        <div class="span12">
+                            <div class="control-group">
+                                @Html.LabelFor(a => a.InicioOcorrencia, new { @class = "control-label" })
+                                <div class="controls">
+                                    @Html.TextBox("txtInicioOcorrencia",@Model.InicioOcorrencia.ToString("dd/MM/yyyy à\\s hh:mm"), new { @class = "span12", @readonly = "readonly"})
+                                </div>
+                            </div>
+                        </div>
+                    </div>                      
+                    <div class="row-fluid">
+                        <div class="span12">
+                            <div class="control-group">
+                                @Html.LabelFor(a => a.Status, new { @class = "control-label" })
+                                <div class="controls">
+                                    @Html.DropDownListFor(a => a.FkStatus, Model.StatusList, new
+                               {                                   
+                                   @class = "m-wrap span12"
+                               })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row-fluid">
+                        <div class="span12">
+                            <div class="control-group">
+                                @Html.LabelFor(a => a.RespostaPrestador, new { @class = "control-label" })
+                                <div class="controls">
+                                    @Html.TextAreaFor(a => a.RespostaPrestador, new { @class = "m-wrap span12" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row-fluid">
+                        <div class="span12">
+                            <div class="control-group">
+                                @Html.LabelFor(a => a.Protocolo, new { @class = "control-label" })
+                                <div class="controls">
+                                    @Html.TextBoxFor(a => a.Protocolo, new { @class = "m-wrap span12" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>                      
+                        
+                    <div class="form-actions" style="margin-top: 20px !important;">
+                        <button type="submit" class="btn blue pull-right"
+                            data-dgd-ajax-callback="returnFunc"
+                            data-dgd-action="parentFormSubmitAjax" data-dgd-click="">
+                            Salvar <i class="icon-save"></i>
+                        </button>
+                        <a href="@Url.Action("Index")" class="btn blue pull-right margin-right-10">Voltar</a>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<seed>
+    <languages>
+        <language description="Portugues" abbreviation="pt-BR" />
+        <language description="English" abbreviation="en-US" />
+    </languages>
+
+    <phrases>
+        <!--Português-->
+        <phrase key="Ocorreu um erro ao tentar inserir o registro, tente novamente mais tarde!"
+                value="Ocorreu um erro ao tentar inserir o registro, tente novamente mais tarde!" language="pt-BR" />
+
+        <phrase key="Ocorreu um erro ao tentar atualizar o registro, tente novamente mais tarde!"
+                value="Ocorreu um erro ao tentar atualizar o registro, tente novamente mais tarde!" language="pt-BR" />
+        <phrase key="Registro inserido com sucesso!" value="Registro inserido com sucesso!" language="pt-BR" />
+        <phrase key="Registro atualizado com sucesso!" value="Registro atualizado com sucesso!" language="pt-BR" />
+        <phrase key="Usuário logado com sucesso!" value="Usuário logado com sucesso!" language="pt-BR" />
+        <phrase key="Usuário não encontrado." value="Usuário não encontrado." language="pt-BR" />
+        <phrase key="O CNPJ já está sendo utilizado" value="O CNPJ já está sendo utilizado" language="pt-BR" />
+        <phrase key="Ocorreu um erro ao tentar remover o(s) registro(s), tente novamente mais tarde!" value="Ocorreu um erro ao tentar remover o(s) registro(s), tente novamente mais tarde!" language="pt-BR" />
+        <phrase key="O(s) registro(s) foram removidos com sucesso!" value="O(s) registro(s) foram removidos com sucesso!" language="pt-BR" />
+        <phrase key="O email informado já está sendo utilizado" value="O email informado já está sendo utilizado" language="pt-BR" />
+        <phrase key="O ano do calendário informado já está sendo utilizado!" value="O ano do calendário informado já está sendo utilizado!" language="pt-BR" />
+      <phrase key="Mensagem enviada com sucesso!" value="Mensagem enviada com sucesso!" language="pt-BR" />
+      <phrase key="Ocorreu um erro ao enviar a mensagem, verifique as configurações de envio." value="Ocorreu um erro ao enviar a mensagem, verifique as configurações de envio." language="pt-BR" />
+      
+      <!--Modelo
+
+    
+        <phrase>
+            <key>key</key>
+            <value>value</value>
+            <language>language</language>
+        </phrase>
+        -->
+        <!--Inglês-->
+        <phrase key="Usuário logado com sucesso!" value="User logged with success!" language="en-US" />
+        <phrase key="Usuário não encontrado." value="User not found." language="en-US" />
+    </phrases>
+</seed>
+
+

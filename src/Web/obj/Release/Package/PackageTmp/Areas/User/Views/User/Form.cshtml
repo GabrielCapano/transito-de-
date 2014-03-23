@@ -1,0 +1,149 @@
+﻿@model UserViewModel
+@{
+    ViewBag.Title = "Usário";
+    var isEdit = (bool)ViewBag.isEdit;
+    ViewBag.FormType = isEdit ? "Editar" : "Criar";
+}
+
+@section Breadcrumb
+{
+    <h3>
+        <span>Usuário</span>
+        <small>@ViewBag.FormType</small>
+    </h3>
+    <ul class="breadcrumb">
+        <li>
+            <i class="icon-home"></i>
+            <a href="@Url.Action("Index", "Dashboard", new { Area = "GTP" })">Home</a>
+            <i class="icon-angle-right"></i>
+        </li>
+        <li>
+            <a href="@Url.Action("Index")">Usuários</a>
+            <i class="icon-angle-right"></i>
+        </li>
+        <li><a href="#">@ViewBag.FormType</a></li>
+    </ul>
+}
+
+
+@section Scripts
+{
+    <script>
+        digdin.init();
+
+        var returnFunc = function (data, resp) {
+            if (data.Status)
+                window.location.href = '@Url.Action("Index")';
+        };
+
+        $('#control-check label').not('.control-label').first().find('span').last().html('Diretor executivo');
+        $('#control-check label').not('.control-label').eq(1).find('span').last().html('Gerente Financeiro');
+        $('#control-check label').not('.control-label').eq(2).find('span').last().html('Gerente de Operações');
+    </script>
+}
+<div class="row-fluid">
+    <div class="span12">
+        <div class="portlet box blue">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="icon-reorder"></i>
+                    <span class="hidden-480">@ViewBag.Title</span>
+                </div>
+            </div>
+            <div class="portlet-body form tab-content tab-pane">
+                @using (Ajax.BeginForm("Save", "User", new AjaxOptions { HttpMethod = "Post" }, new { @class = "form-horizontal" }))
+                {
+                    
+                    @Html.ValidationSummary()
+                    
+                    @Html.AntiForgeryToken()
+
+                    @Html.HiddenFor(a => a.Id)
+                    @Html.HiddenFor(a => a.LastUpdated)
+                    @Html.HiddenFor(a => a.CreatedDate)
+                    @Html.HiddenFor(a => a.UpdatedBy)
+                    @Html.HiddenFor(a => a.CreatedBy)
+
+                    <div class="row-fluid">
+                        <div class="span12">
+                            <div class="control-group">
+                                @Html.LabelFor(a => a.Name, new { @class = "control-label" })
+                                <div class="controls">
+                                    @Html.TextBoxFor(a => a.Name, new { @class = "m-wrap span12" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row-fluid">
+                        <div class="span12">
+                            <div class="control-group">
+                                @Html.LabelFor(a => a.Email, new { @class = "control-label" })
+                                @{
+                    var obj = new Dictionary<string, object>
+                                        {
+                                            {"class", "m-wrap span12"}
+                                        };
+                    if (isEdit)
+                    {
+                        obj.Add("readonly", "readonly");
+                    }
+                                        
+                                }
+                                <div class="controls">
+                                    @Html.TextBoxFor(a => a.Email, obj)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row-fluid">
+                        <div class="span12">
+                            <div class="control-group">
+                                @Html.LabelFor(a => a.Password, new { @class = "control-label" })
+                                <div class="controls">
+                                    @Html.PasswordFor(a => a.Password, new
+                                        {
+                                            @class = "m-wrap span12"
+                                        })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row-fluid">
+                        <div class="span12">
+                            <div class="control-group">
+                                @Html.LabelFor(a => a.ConfirmPassword, new { @class = "control-label" })
+                                <div class="controls">
+                                    @Html.PasswordFor(a => a.ConfirmPassword, new
+                                        {
+                                            @class = "m-wrap span12",
+                                        })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row-fluid">
+
+                        <div class="span12">
+                            <div class="control-group" id="control-check">
+                                <label class="control-label">Papéis Desempenhados</label>
+                                <div class="controls">
+                                    @Html.EditorFor(a => a.AuthLevels)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        
+                    <div class="form-actions" style="margin-top: 20px !important;">
+                        <button type="submit" class="btn blue pull-right"
+                            data-dgd-ajax-callback="returnFunc"
+                            data-dgd-action="parentFormSubmitAjax" data-dgd-click="">
+                            Salvar <i class="icon-save"></i>
+                        </button>
+                        <a href="@Url.Action("Index")" class="btn blue pull-right margin-right-10">Voltar</a>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+

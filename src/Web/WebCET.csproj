@@ -1,0 +1,1993 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BDF47304-8B94-4E32-A87B-8D41FCEFD650}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Web</RootNamespace>
+    <AssemblyName>Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AutoMapper.3.0.0\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AutoMapper.3.0.0\lib\net40\AutoMapper.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="Elmah">
+      <HintPath>..\packages\elmah.corelibrary.1.2.2\lib\Elmah.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.0.2\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.0.2\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Owin.2.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.2.1.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Owin.Security.2.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Repository, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\Repository.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Device" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.30506.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.30506.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.30506.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.30506.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.2\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.30506.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Utilities.DataTypes">
+      <HintPath>..\packages\CraigsUtilityLibrary-DataTypes.3.4.0080\lib\net40\Utilities.DataTypes.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing">
+      <HintPath>..\packages\ZXing.Net.0.12.0.0\lib\net40\zxing.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.presentation">
+      <HintPath>..\packages\ZXing.Net.0.12.0.0\lib\net40\zxing.presentation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\MapperConfig.cs" />
+    <Compile Include="Areas\CEP\CEPAreaRegistration.cs" />
+    <Compile Include="Areas\CEP\Controllers\CEPController.cs" />
+    <Compile Include="Areas\Document\DocumentAreaRegistration.cs" />
+    <Compile Include="Areas\Email\Controllers\EmailConfigurationController.cs" />
+    <Compile Include="Areas\Email\EmailAreaRegistration.cs" />
+    <Compile Include="Areas\Email\Models\EmailConfigurationViewModel.cs" />
+    <Compile Include="Areas\Document\Controllers\DocumentController.cs" />
+    <Compile Include="Areas\Document\Models\DocumentViewModel.cs" />
+    <Compile Include="Areas\Log\Controllers\LogController.cs" />
+    <Compile Include="Areas\Log\LogAreaRegistration.cs" />
+    <Compile Include="Areas\Ocorrencias\Controllers\OcorrenciaController.cs" />
+    <Compile Include="Areas\Ocorrencias\Models\OcorrenciaViewModel.cs" />
+    <Compile Include="Areas\Ocorrencias\OcorrenciasAreaRegistration.cs" />
+    <Compile Include="Areas\User\Controllers\LoginController.cs" />
+    <Compile Include="Areas\User\Controllers\UserController.cs" />
+    <Compile Include="Areas\User\Models\ForgotPasswordModel.cs" />
+    <Compile Include="Areas\User\Models\LoginViewModel.cs" />
+    <Compile Include="Areas\User\Models\UserViewModel.cs" />
+    <Compile Include="Areas\User\UserAreaRegistration.cs" />
+    <Compile Include="Base\BaseController.cs" />
+    <Compile Include="Base\Extension.cs" />
+    <Compile Include="Base\FilterAttribute.cs" />
+    <Compile Include="Base\ImageResult.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ReminderController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Extensions\ObjectExtensions.cs" />
+    <Compile Include="Extensions\SelectObjectExtension.cs" />
+    <Compile Include="Filters\AjaxValidate.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\HtmlHelperExtensions.cs" />
+    <Compile Include="Hubs\AlertHub.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Proxy\AlertProxy.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="App_Readme\Elmah.txt" />
+    <Content Include="Content\images\gtp-logo.png" />
+    <Content Include="Content\images\icons\marker_bus.png" />
+    <Content Include="Content\images\icons\gear.png" />
+    <Content Include="Content\images\icons\marker_person.png" />
+    <Content Include="Content\styles\custom.css">
+      <DependentUpon>custom.less</DependentUpon>
+    </Content>
+    <Content Include="Content\styles\custom.min.css" />
+    <Content Include="Content\themes\base\images\animated-overlay.gif" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Scripts\digdin-cep-module.js" />
+    <Content Include="Scripts\digdin-upload-module.js" />
+    <Content Include="Scripts\digdin.min.js">
+      <DependentUpon>digdin.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\google-maps.js" />
+    <Content Include="Scripts\jquery.form.js" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.menu.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.spinner.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\jquery.ui.tooltip.css" />
+    <Content Include="Content\themes\base\minified\images\animated-overlay.gif" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.menu.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.spinner.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tooltip.min.css" />
+    <Content Include="Content\themes\metronic\css\animate.css" />
+    <Content Include="Content\themes\metronic\css\pages\about-us.css" />
+    <Content Include="Content\themes\metronic\css\pages\blog.css" />
+    <Content Include="Content\themes\metronic\css\pages\email.css" />
+    <Content Include="Content\themes\metronic\css\pages\error.css" />
+    <Content Include="Content\themes\metronic\css\pages\inbox.css" />
+    <Content Include="Content\themes\metronic\css\pages\invoice.css" />
+    <Content Include="Content\themes\metronic\css\pages\login.css" />
+    <Content Include="Content\themes\metronic\css\pages\news.css" />
+    <Content Include="Content\themes\metronic\css\pages\pricing-tables.css" />
+    <Content Include="Content\themes\metronic\css\pages\profile.css" />
+    <Content Include="Content\themes\metronic\css\pages\promo.css" />
+    <Content Include="Content\themes\metronic\css\pages\search.css" />
+    <Content Include="Content\themes\metronic\css\print.css" />
+    <Content Include="Content\themes\metronic\css\style-metro.css" />
+    <Content Include="Content\themes\metronic\css\style-responsive.css" />
+    <Content Include="Content\themes\metronic\css\style.css" />
+    <Content Include="Content\themes\metronic\css\themes\blue.css" />
+    <Content Include="Content\themes\metronic\css\themes\brown.css" />
+    <Content Include="Content\themes\metronic\css\themes\default.css" />
+    <Content Include="Content\themes\metronic\css\themes\default.min.css">
+      <DependentUpon>default.css</DependentUpon>
+    </Content>
+    <Content Include="Content\themes\metronic\css\themes\light.css" />
+    <Content Include="Content\themes\metronic\css\themes\purple.css" />
+    <Content Include="Content\themes\metronic\fonts\font.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\themes\metronic\img\ajax-loading.gif" />
+    <Content Include="Content\themes\metronic\img\arrow-down.png" />
+    <Content Include="Content\themes\metronic\img\avatar.png" />
+    <Content Include="Content\themes\metronic\img\avatar1.jpg" />
+    <Content Include="Content\themes\metronic\img\avatar1_small.jpg" />
+    <Content Include="Content\themes\metronic\img\avatar2.jpg" />
+    <Content Include="Content\themes\metronic\img\avatar3.jpg" />
+    <Content Include="Content\themes\metronic\img\avatar3_small.jpg" />
+    <Content Include="Content\themes\metronic\img\bg-opacity.png" />
+    <Content Include="Content\themes\metronic\img\blog\1.jpg" />
+    <Content Include="Content\themes\metronic\img\blog\10.jpg" />
+    <Content Include="Content\themes\metronic\img\blog\11.jpg" />
+    <Content Include="Content\themes\metronic\img\blog\12.jpg" />
+    <Content Include="Content\themes\metronic\img\blog\13.jpg" />
+    <Content Include="Content\themes\metronic\img\blog\14.jpg" />
+    <Content Include="Content\themes\metronic\img\blog\15.jpg" />
+    <Content Include="Content\themes\metronic\img\blog\16.jpg" />
+    <Content Include="Content\themes\metronic\img\blog\17.jpg" />
+    <Content Include="Content\themes\metronic\img\blog\18.jpg" />
+    <Content Include="Content\themes\metronic\img\blog\19.jpg" />
+    <Content Include="Content\themes\metronic\img\blog\2.jpg" />
+    <Content Include="Content\themes\metronic\img\blog\20.jpg" />
+    <Content Include="Content\themes\metronic\img\blog\3.jpg" />
+    <Content Include="Content\themes\metronic\img\blog\4.jpg" />
+    <Content Include="Content\themes\metronic\img\blog\5.jpg" />
+    <Content Include="Content\themes\metronic\img\blog\6.jpg" />
+    <Content Include="Content\themes\metronic\img\blog\7.jpg" />
+    <Content Include="Content\themes\metronic\img\blog\8.jpg" />
+    <Content Include="Content\themes\metronic\img\blog\9.jpg" />
+    <Content Include="Content\themes\metronic\img\flags\ad.png" />
+    <Content Include="Content\themes\metronic\img\flags\ae.png" />
+    <Content Include="Content\themes\metronic\img\flags\af.png" />
+    <Content Include="Content\themes\metronic\img\flags\ag.png" />
+    <Content Include="Content\themes\metronic\img\flags\ai.png" />
+    <Content Include="Content\themes\metronic\img\flags\al.png" />
+    <Content Include="Content\themes\metronic\img\flags\am.png" />
+    <Content Include="Content\themes\metronic\img\flags\an.png" />
+    <Content Include="Content\themes\metronic\img\flags\ao.png" />
+    <Content Include="Content\themes\metronic\img\flags\ar.png" />
+    <Content Include="Content\themes\metronic\img\flags\as.png" />
+    <Content Include="Content\themes\metronic\img\flags\at.png" />
+    <Content Include="Content\themes\metronic\img\flags\au.png" />
+    <Content Include="Content\themes\metronic\img\flags\aw.png" />
+    <Content Include="Content\themes\metronic\img\flags\ax.png" />
+    <Content Include="Content\themes\metronic\img\flags\az.png" />
+    <Content Include="Content\themes\metronic\img\flags\ba.png" />
+    <Content Include="Content\themes\metronic\img\flags\bb.png" />
+    <Content Include="Content\themes\metronic\img\flags\bd.png" />
+    <Content Include="Content\themes\metronic\img\flags\be.png" />
+    <Content Include="Content\themes\metronic\img\flags\bf.png" />
+    <Content Include="Content\themes\metronic\img\flags\bg.png" />
+    <Content Include="Content\themes\metronic\img\flags\bh.png" />
+    <Content Include="Content\themes\metronic\img\flags\bi.png" />
+    <Content Include="Content\themes\metronic\img\flags\bj.png" />
+    <Content Include="Content\themes\metronic\img\flags\bm.png" />
+    <Content Include="Content\themes\metronic\img\flags\bn.png" />
+    <Content Include="Content\themes\metronic\img\flags\bo.png" />
+    <Content Include="Content\themes\metronic\img\flags\br.png" />
+    <Content Include="Content\themes\metronic\img\flags\bs.png" />
+    <Content Include="Content\themes\metronic\img\flags\bt.png" />
+    <Content Include="Content\themes\metronic\img\flags\bv.png" />
+    <Content Include="Content\themes\metronic\img\flags\bw.png" />
+    <Content Include="Content\themes\metronic\img\flags\by.png" />
+    <Content Include="Content\themes\metronic\img\flags\bz.png" />
+    <Content Include="Content\themes\metronic\img\flags\ca.png" />
+    <Content Include="Content\themes\metronic\img\flags\catalonia.png" />
+    <Content Include="Content\themes\metronic\img\flags\cc.png" />
+    <Content Include="Content\themes\metronic\img\flags\cd.png" />
+    <Content Include="Content\themes\metronic\img\flags\cf.png" />
+    <Content Include="Content\themes\metronic\img\flags\cg.png" />
+    <Content Include="Content\themes\metronic\img\flags\ch.png" />
+    <Content Include="Content\themes\metronic\img\flags\ci.png" />
+    <Content Include="Content\themes\metronic\img\flags\ck.png" />
+    <Content Include="Content\themes\metronic\img\flags\cl.png" />
+    <Content Include="Content\themes\metronic\img\flags\cm.png" />
+    <Content Include="Content\themes\metronic\img\flags\cn.png" />
+    <Content Include="Content\themes\metronic\img\flags\co.png" />
+    <Content Include="Content\themes\metronic\img\flags\cr.png" />
+    <Content Include="Content\themes\metronic\img\flags\cs.png" />
+    <Content Include="Content\themes\metronic\img\flags\cu.png" />
+    <Content Include="Content\themes\metronic\img\flags\cv.png" />
+    <Content Include="Content\themes\metronic\img\flags\cx.png" />
+    <Content Include="Content\themes\metronic\img\flags\cy.png" />
+    <Content Include="Content\themes\metronic\img\flags\cz.png" />
+    <Content Include="Content\themes\metronic\img\flags\de.png" />
+    <Content Include="Content\themes\metronic\img\flags\dj.png" />
+    <Content Include="Content\themes\metronic\img\flags\dk.png" />
+    <Content Include="Content\themes\metronic\img\flags\dm.png" />
+    <Content Include="Content\themes\metronic\img\flags\do.png" />
+    <Content Include="Content\themes\metronic\img\flags\dz.png" />
+    <Content Include="Content\themes\metronic\img\flags\ec.png" />
+    <Content Include="Content\themes\metronic\img\flags\ee.png" />
+    <Content Include="Content\themes\metronic\img\flags\eg.png" />
+    <Content Include="Content\themes\metronic\img\flags\eh.png" />
+    <Content Include="Content\themes\metronic\img\flags\england.png" />
+    <Content Include="Content\themes\metronic\img\flags\er.png" />
+    <Content Include="Content\themes\metronic\img\flags\es.png" />
+    <Content Include="Content\themes\metronic\img\flags\et.png" />
+    <Content Include="Content\themes\metronic\img\flags\europeanunion.png" />
+    <Content Include="Content\themes\metronic\img\flags\fam.png" />
+    <Content Include="Content\themes\metronic\img\flags\fi.png" />
+    <Content Include="Content\themes\metronic\img\flags\fj.png" />
+    <Content Include="Content\themes\metronic\img\flags\fk.png" />
+    <Content Include="Content\themes\metronic\img\flags\fm.png" />
+    <Content Include="Content\themes\metronic\img\flags\fo.png" />
+    <Content Include="Content\themes\metronic\img\flags\fr.png" />
+    <Content Include="Content\themes\metronic\img\flags\ga.png" />
+    <Content Include="Content\themes\metronic\img\flags\gb.png" />
+    <Content Include="Content\themes\metronic\img\flags\gd.png" />
+    <Content Include="Content\themes\metronic\img\flags\ge.png" />
+    <Content Include="Content\themes\metronic\img\flags\gf.png" />
+    <Content Include="Content\themes\metronic\img\flags\gh.png" />
+    <Content Include="Content\themes\metronic\img\flags\gi.png" />
+    <Content Include="Content\themes\metronic\img\flags\gl.png" />
+    <Content Include="Content\themes\metronic\img\flags\gm.png" />
+    <Content Include="Content\themes\metronic\img\flags\gn.png" />
+    <Content Include="Content\themes\metronic\img\flags\gp.png" />
+    <Content Include="Content\themes\metronic\img\flags\gq.png" />
+    <Content Include="Content\themes\metronic\img\flags\gr.png" />
+    <Content Include="Content\themes\metronic\img\flags\gs.png" />
+    <Content Include="Content\themes\metronic\img\flags\gt.png" />
+    <Content Include="Content\themes\metronic\img\flags\gu.png" />
+    <Content Include="Content\themes\metronic\img\flags\gw.png" />
+    <Content Include="Content\themes\metronic\img\flags\gy.png" />
+    <Content Include="Content\themes\metronic\img\flags\hk.png" />
+    <Content Include="Content\themes\metronic\img\flags\hm.png" />
+    <Content Include="Content\themes\metronic\img\flags\hn.png" />
+    <Content Include="Content\themes\metronic\img\flags\hr.png" />
+    <Content Include="Content\themes\metronic\img\flags\ht.png" />
+    <Content Include="Content\themes\metronic\img\flags\hu.png" />
+    <Content Include="Content\themes\metronic\img\flags\id.png" />
+    <Content Include="Content\themes\metronic\img\flags\ie.png" />
+    <Content Include="Content\themes\metronic\img\flags\il.png" />
+    <Content Include="Content\themes\metronic\img\flags\in.png" />
+    <Content Include="Content\themes\metronic\img\flags\io.png" />
+    <Content Include="Content\themes\metronic\img\flags\iq.png" />
+    <Content Include="Content\themes\metronic\img\flags\ir.png" />
+    <Content Include="Content\themes\metronic\img\flags\is.png" />
+    <Content Include="Content\themes\metronic\img\flags\it.png" />
+    <Content Include="Content\themes\metronic\img\flags\jm.png" />
+    <Content Include="Content\themes\metronic\img\flags\jo.png" />
+    <Content Include="Content\themes\metronic\img\flags\jp.png" />
+    <Content Include="Content\themes\metronic\img\flags\ke.png" />
+    <Content Include="Content\themes\metronic\img\flags\kg.png" />
+    <Content Include="Content\themes\metronic\img\flags\kh.png" />
+    <Content Include="Content\themes\metronic\img\flags\ki.png" />
+    <Content Include="Content\themes\metronic\img\flags\km.png" />
+    <Content Include="Content\themes\metronic\img\flags\kn.png" />
+    <Content Include="Content\themes\metronic\img\flags\kp.png" />
+    <Content Include="Content\themes\metronic\img\flags\kr.png" />
+    <Content Include="Content\themes\metronic\img\flags\kw.png" />
+    <Content Include="Content\themes\metronic\img\flags\ky.png" />
+    <Content Include="Content\themes\metronic\img\flags\kz.png" />
+    <Content Include="Content\themes\metronic\img\flags\la.png" />
+    <Content Include="Content\themes\metronic\img\flags\lb.png" />
+    <Content Include="Content\themes\metronic\img\flags\lc.png" />
+    <Content Include="Content\themes\metronic\img\flags\li.png" />
+    <Content Include="Content\themes\metronic\img\flags\lk.png" />
+    <Content Include="Content\themes\metronic\img\flags\lr.png" />
+    <Content Include="Content\themes\metronic\img\flags\ls.png" />
+    <Content Include="Content\themes\metronic\img\flags\lt.png" />
+    <Content Include="Content\themes\metronic\img\flags\lu.png" />
+    <Content Include="Content\themes\metronic\img\flags\lv.png" />
+    <Content Include="Content\themes\metronic\img\flags\ly.png" />
+    <Content Include="Content\themes\metronic\img\flags\ma.png" />
+    <Content Include="Content\themes\metronic\img\flags\mc.png" />
+    <Content Include="Content\themes\metronic\img\flags\md.png" />
+    <Content Include="Content\themes\metronic\img\flags\me.png" />
+    <Content Include="Content\themes\metronic\img\flags\mg.png" />
+    <Content Include="Content\themes\metronic\img\flags\mh.png" />
+    <Content Include="Content\themes\metronic\img\flags\mk.png" />
+    <Content Include="Content\themes\metronic\img\flags\ml.png" />
+    <Content Include="Content\themes\metronic\img\flags\mm.png" />
+    <Content Include="Content\themes\metronic\img\flags\mn.png" />
+    <Content Include="Content\themes\metronic\img\flags\mo.png" />
+    <Content Include="Content\themes\metronic\img\flags\mp.png" />
+    <Content Include="Content\themes\metronic\img\flags\mq.png" />
+    <Content Include="Content\themes\metronic\img\flags\mr.png" />
+    <Content Include="Content\themes\metronic\img\flags\ms.png" />
+    <Content Include="Content\themes\metronic\img\flags\mt.png" />
+    <Content Include="Content\themes\metronic\img\flags\mu.png" />
+    <Content Include="Content\themes\metronic\img\flags\mv.png" />
+    <Content Include="Content\themes\metronic\img\flags\mw.png" />
+    <Content Include="Content\themes\metronic\img\flags\mx.png" />
+    <Content Include="Content\themes\metronic\img\flags\my.png" />
+    <Content Include="Content\themes\metronic\img\flags\mz.png" />
+    <Content Include="Content\themes\metronic\img\flags\na.png" />
+    <Content Include="Content\themes\metronic\img\flags\nc.png" />
+    <Content Include="Content\themes\metronic\img\flags\ne.png" />
+    <Content Include="Content\themes\metronic\img\flags\nf.png" />
+    <Content Include="Content\themes\metronic\img\flags\ng.png" />
+    <Content Include="Content\themes\metronic\img\flags\ni.png" />
+    <Content Include="Content\themes\metronic\img\flags\nl.png" />
+    <Content Include="Content\themes\metronic\img\flags\no.png" />
+    <Content Include="Content\themes\metronic\img\flags\np.png" />
+    <Content Include="Content\themes\metronic\img\flags\nr.png" />
+    <Content Include="Content\themes\metronic\img\flags\nu.png" />
+    <Content Include="Content\themes\metronic\img\flags\nz.png" />
+    <Content Include="Content\themes\metronic\img\flags\om.png" />
+    <Content Include="Content\themes\metronic\img\flags\pa.png" />
+    <Content Include="Content\themes\metronic\img\flags\pe.png" />
+    <Content Include="Content\themes\metronic\img\flags\pf.png" />
+    <Content Include="Content\themes\metronic\img\flags\pg.png" />
+    <Content Include="Content\themes\metronic\img\flags\ph.png" />
+    <Content Include="Content\themes\metronic\img\flags\pk.png" />
+    <Content Include="Content\themes\metronic\img\flags\pl.png" />
+    <Content Include="Content\themes\metronic\img\flags\pm.png" />
+    <Content Include="Content\themes\metronic\img\flags\pn.png" />
+    <Content Include="Content\themes\metronic\img\flags\pr.png" />
+    <Content Include="Content\themes\metronic\img\flags\ps.png" />
+    <Content Include="Content\themes\metronic\img\flags\pt.png" />
+    <Content Include="Content\themes\metronic\img\flags\pw.png" />
+    <Content Include="Content\themes\metronic\img\flags\py.png" />
+    <Content Include="Content\themes\metronic\img\flags\qa.png" />
+    <Content Include="Content\themes\metronic\img\flags\re.png" />
+    <Content Include="Content\themes\metronic\img\flags\readme.txt" />
+    <Content Include="Content\themes\metronic\img\flags\ro.png" />
+    <Content Include="Content\themes\metronic\img\flags\rs.png" />
+    <Content Include="Content\themes\metronic\img\flags\ru.png" />
+    <Content Include="Content\themes\metronic\img\flags\rw.png" />
+    <Content Include="Content\themes\metronic\img\flags\sa.png" />
+    <Content Include="Content\themes\metronic\img\flags\sb.png" />
+    <Content Include="Content\themes\metronic\img\flags\sc.png" />
+    <Content Include="Content\themes\metronic\img\flags\scotland.png" />
+    <Content Include="Content\themes\metronic\img\flags\sd.png" />
+    <Content Include="Content\themes\metronic\img\flags\se.png" />
+    <Content Include="Content\themes\metronic\img\flags\sg.png" />
+    <Content Include="Content\themes\metronic\img\flags\sh.png" />
+    <Content Include="Content\themes\metronic\img\flags\si.png" />
+    <Content Include="Content\themes\metronic\img\flags\sj.png" />
+    <Content Include="Content\themes\metronic\img\flags\sk.png" />
+    <Content Include="Content\themes\metronic\img\flags\sl.png" />
+    <Content Include="Content\themes\metronic\img\flags\sm.png" />
+    <Content Include="Content\themes\metronic\img\flags\sn.png" />
+    <Content Include="Content\themes\metronic\img\flags\so.png" />
+    <Content Include="Content\themes\metronic\img\flags\sr.png" />
+    <Content Include="Content\themes\metronic\img\flags\st.png" />
+    <Content Include="Content\themes\metronic\img\flags\sv.png" />
+    <Content Include="Content\themes\metronic\img\flags\sy.png" />
+    <Content Include="Content\themes\metronic\img\flags\sz.png" />
+    <Content Include="Content\themes\metronic\img\flags\tc.png" />
+    <Content Include="Content\themes\metronic\img\flags\td.png" />
+    <Content Include="Content\themes\metronic\img\flags\tf.png" />
+    <Content Include="Content\themes\metronic\img\flags\tg.png" />
+    <Content Include="Content\themes\metronic\img\flags\th.png" />
+    <Content Include="Content\themes\metronic\img\flags\tj.png" />
+    <Content Include="Content\themes\metronic\img\flags\tk.png" />
+    <Content Include="Content\themes\metronic\img\flags\tl.png" />
+    <Content Include="Content\themes\metronic\img\flags\tm.png" />
+    <Content Include="Content\themes\metronic\img\flags\tn.png" />
+    <Content Include="Content\themes\metronic\img\flags\to.png" />
+    <Content Include="Content\themes\metronic\img\flags\tr.png" />
+    <Content Include="Content\themes\metronic\img\flags\tt.png" />
+    <Content Include="Content\themes\metronic\img\flags\tv.png" />
+    <Content Include="Content\themes\metronic\img\flags\tw.png" />
+    <Content Include="Content\themes\metronic\img\flags\tz.png" />
+    <Content Include="Content\themes\metronic\img\flags\ua.png" />
+    <Content Include="Content\themes\metronic\img\flags\ug.png" />
+    <Content Include="Content\themes\metronic\img\flags\um.png" />
+    <Content Include="Content\themes\metronic\img\flags\us.png" />
+    <Content Include="Content\themes\metronic\img\flags\uy.png" />
+    <Content Include="Content\themes\metronic\img\flags\uz.png" />
+    <Content Include="Content\themes\metronic\img\flags\va.png" />
+    <Content Include="Content\themes\metronic\img\flags\vc.png" />
+    <Content Include="Content\themes\metronic\img\flags\ve.png" />
+    <Content Include="Content\themes\metronic\img\flags\vg.png" />
+    <Content Include="Content\themes\metronic\img\flags\vi.png" />
+    <Content Include="Content\themes\metronic\img\flags\vn.png" />
+    <Content Include="Content\themes\metronic\img\flags\vu.png" />
+    <Content Include="Content\themes\metronic\img\flags\wales.png" />
+    <Content Include="Content\themes\metronic\img\flags\wf.png" />
+    <Content Include="Content\themes\metronic\img\flags\ws.png" />
+    <Content Include="Content\themes\metronic\img\flags\ye.png" />
+    <Content Include="Content\themes\metronic\img\flags\yt.png" />
+    <Content Include="Content\themes\metronic\img\flags\za.png" />
+    <Content Include="Content\themes\metronic\img\flags\zm.png" />
+    <Content Include="Content\themes\metronic\img\flags\zw.png" />
+    <Content Include="Content\themes\metronic\img\gallery\image1.jpg" />
+    <Content Include="Content\themes\metronic\img\gallery\image2.jpg" />
+    <Content Include="Content\themes\metronic\img\gallery\image3.jpg" />
+    <Content Include="Content\themes\metronic\img\gallery\image4.jpg" />
+    <Content Include="Content\themes\metronic\img\gallery\image5.jpg" />
+    <Content Include="Content\themes\metronic\img\gallery\item_img.jpg" />
+    <Content Include="Content\themes\metronic\img\gallery\item_img1.jpg" />
+    <Content Include="Content\themes\metronic\img\gallery\preview_02.png" />
+    <Content Include="Content\themes\metronic\img\gallery\preview_03.png" />
+    <Content Include="Content\themes\metronic\img\gallery\preview_04.png" />
+    <Content Include="Content\themes\metronic\img\gallery\preview_05.png" />
+    <Content Include="Content\themes\metronic\img\gallery\preview_06.png" />
+    <Content Include="Content\themes\metronic\img\gallery\preview_07.png" />
+    <Content Include="Content\themes\metronic\img\gallery\preview_08.png" />
+    <Content Include="Content\themes\metronic\img\gallery\preview_09.png" />
+    <Content Include="Content\themes\metronic\img\gallery\preview_10.png" />
+    <Content Include="Content\themes\metronic\img\gallery\preview_11.png" />
+    <Content Include="Content\themes\metronic\img\gallery\preview_12.png" />
+    <Content Include="Content\themes\metronic\img\gallery\preview_13.png" />
+    <Content Include="Content\themes\metronic\img\gallery\preview_14.png" />
+    <Content Include="Content\themes\metronic\img\gallery\preview_15.png" />
+    <Content Include="Content\themes\metronic\img\gallery\preview_16.png" />
+    <Content Include="Content\themes\metronic\img\gallery\preview_17.png" />
+    <Content Include="Content\themes\metronic\img\gallery\preview_18.png" />
+    <Content Include="Content\themes\metronic\img\hor-menu-red-arrow.png" />
+    <Content Include="Content\themes\metronic\img\hor-menu-search-close.png" />
+    <Content Include="Content\themes\metronic\img\hor-menu-search.jpg" />
+    <Content Include="Content\themes\metronic\img\hor-menu-search.png" />
+    <Content Include="Content\themes\metronic\img\icon-color-close.png" />
+    <Content Include="Content\themes\metronic\img\icon-color.png" />
+    <Content Include="Content\themes\metronic\img\icon-img-down.png" />
+    <Content Include="Content\themes\metronic\img\icon-img-up.png" />
+    <Content Include="Content\themes\metronic\img\inbox-nav-arrow-blue.png" />
+    <Content Include="Content\themes\metronic\img\invoice\walmart.png" />
+    <Content Include="Content\themes\metronic\img\loading.gif" />
+    <Content Include="Content\themes\metronic\img\logo-big.png" />
+    <Content Include="Content\themes\metronic\img\logo.png" />
+    <Content Include="Content\themes\metronic\img\menu-toggler.png" />
+    <Content Include="Content\themes\metronic\img\overlay-icon.png" />
+    <Content Include="Content\themes\metronic\img\pages\2.jpg" />
+    <Content Include="Content\themes\metronic\img\pages\3.jpg" />
+    <Content Include="Content\themes\metronic\img\pages\img.png" />
+    <Content Include="Content\themes\metronic\img\pages\img1.png" />
+    <Content Include="Content\themes\metronic\img\pages\img1_2.png" />
+    <Content Include="Content\themes\metronic\img\pages\img2.png" />
+    <Content Include="Content\themes\metronic\img\pages\img3.jpg" />
+    <Content Include="Content\themes\metronic\img\pages\img3.png" />
+    <Content Include="Content\themes\metronic\img\pages\img4.png" />
+    <Content Include="Content\themes\metronic\img\photo1.jpg" />
+    <Content Include="Content\themes\metronic\img\photo2.jpg" />
+    <Content Include="Content\themes\metronic\img\portlet-collapse-icon-white.png" />
+    <Content Include="Content\themes\metronic\img\portlet-collapse-icon.png" />
+    <Content Include="Content\themes\metronic\img\portlet-config-icon-white.png" />
+    <Content Include="Content\themes\metronic\img\portlet-config-icon.png" />
+    <Content Include="Content\themes\metronic\img\portlet-expand-icon-white.png" />
+    <Content Include="Content\themes\metronic\img\portlet-expand-icon.png" />
+    <Content Include="Content\themes\metronic\img\portlet-reload-icon-white.png" />
+    <Content Include="Content\themes\metronic\img\portlet-reload-icon.png" />
+    <Content Include="Content\themes\metronic\img\portlet-remove-icon-white.png" />
+    <Content Include="Content\themes\metronic\img\portlet-remove-icon.png" />
+    <Content Include="Content\themes\metronic\img\profile\portfolio\logo_azteca.jpg" />
+    <Content Include="Content\themes\metronic\img\profile\portfolio\logo_conquer.jpg" />
+    <Content Include="Content\themes\metronic\img\profile\portfolio\logo_metronic.jpg" />
+    <Content Include="Content\themes\metronic\img\profile\profile-img.jpg" />
+    <Content Include="Content\themes\metronic\img\profile\profile-img.png" />
+    <Content Include="Content\themes\metronic\img\remove-icon-small.png" />
+    <Content Include="Content\themes\metronic\img\search-icon-blue.png" />
+    <Content Include="Content\themes\metronic\img\search-icon-brown.png" />
+    <Content Include="Content\themes\metronic\img\search-icon-purple.png" />
+    <Content Include="Content\themes\metronic\img\search-icon-red.png" />
+    <Content Include="Content\themes\metronic\img\search-icon-white.png" />
+    <Content Include="Content\themes\metronic\img\search-icon.png" />
+    <Content Include="Content\themes\metronic\img\search\1.jpg" />
+    <Content Include="Content\themes\metronic\img\search\2.jpg" />
+    <Content Include="Content\themes\metronic\img\search\img1.jpg" />
+    <Content Include="Content\themes\metronic\img\search\img2.jpg" />
+    <Content Include="Content\themes\metronic\img\search\img3.jpg" />
+    <Content Include="Content\themes\metronic\img\select-caret.png" />
+    <Content Include="Content\themes\metronic\img\sidebar-menu-arrow-green.png" />
+    <Content Include="Content\themes\metronic\img\sidebar-menu-arrow-rtl.png" />
+    <Content Include="Content\themes\metronic\img\sidebar-menu-arrow.png" />
+    <Content Include="Content\themes\metronic\img\sidebar-search-close-blue.png" />
+    <Content Include="Content\themes\metronic\img\sidebar-search-close-brown.png" />
+    <Content Include="Content\themes\metronic\img\sidebar-search-close-light.png" />
+    <Content Include="Content\themes\metronic\img\sidebar-search-close-purple.png" />
+    <Content Include="Content\themes\metronic\img\sidebar-search-close.png" />
+    <Content Include="Content\themes\metronic\img\sidebar-toggler-blue.jpg" />
+    <Content Include="Content\themes\metronic\img\sidebar-toggler-brown.jpg" />
+    <Content Include="Content\themes\metronic\img\sidebar-toggler-light.jpg" />
+    <Content Include="Content\themes\metronic\img\sidebar-toggler-purple.jpg" />
+    <Content Include="Content\themes\metronic\img\sidebar-toggler.jpg" />
+    <Content Include="Content\themes\metronic\img\sidebar-toggler.png" />
+    <Content Include="Content\themes\metronic\img\social\amazon.png" />
+    <Content Include="Content\themes\metronic\img\social\behance.png" />
+    <Content Include="Content\themes\metronic\img\social\blogger.png" />
+    <Content Include="Content\themes\metronic\img\social\deviantart.png" />
+    <Content Include="Content\themes\metronic\img\social\dribbble.png" />
+    <Content Include="Content\themes\metronic\img\social\dropbox.png" />
+    <Content Include="Content\themes\metronic\img\social\evernote.png" />
+    <Content Include="Content\themes\metronic\img\social\facebook.png" />
+    <Content Include="Content\themes\metronic\img\social\forrst.png" />
+    <Content Include="Content\themes\metronic\img\social\github.png" />
+    <Content Include="Content\themes\metronic\img\social\googleplus.png" />
+    <Content Include="Content\themes\metronic\img\social\jolicloud.png" />
+    <Content Include="Content\themes\metronic\img\social\last-fm.png" />
+    <Content Include="Content\themes\metronic\img\social\linkedin.png" />
+    <Content Include="Content\themes\metronic\img\social\picasa.png" />
+    <Content Include="Content\themes\metronic\img\social\pintrest.png" />
+    <Content Include="Content\themes\metronic\img\social\rss.png" />
+    <Content Include="Content\themes\metronic\img\social\skype.png" />
+    <Content Include="Content\themes\metronic\img\social\spotify.png" />
+    <Content Include="Content\themes\metronic\img\social\stumbleupon.png" />
+    <Content Include="Content\themes\metronic\img\social\tumblr.png" />
+    <Content Include="Content\themes\metronic\img\social\twitter.png" />
+    <Content Include="Content\themes\metronic\img\social\vimeo.png" />
+    <Content Include="Content\themes\metronic\img\social\wordpress.png" />
+    <Content Include="Content\themes\metronic\img\social\xing.png" />
+    <Content Include="Content\themes\metronic\img\social\yahoo.png" />
+    <Content Include="Content\themes\metronic\img\social\youtube.png" />
+    <Content Include="Content\themes\metronic\img\syncfusion-icons-white.png" />
+    <Content Include="Content\themes\metronic\img\syncfusion-icons.png" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-colorpicker\css\colorpicker.css" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-colorpicker\img\alpha.png" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-colorpicker\img\hue.png" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-colorpicker\img\saturation.png" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-colorpicker\js\bootstrap-colorpicker.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\.gitignore" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\css\datepicker.css" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\js\bootstrap-datepicker.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.bg.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.ca.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.cs.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.da.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.de.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.el.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.es.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.fi.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.fr.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.he.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.hr.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.hu.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.id.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.is.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.it.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.ja.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.kr.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.lt.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.lv.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.ms.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.nb.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.nl.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.pl.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.pt-BR.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.pt.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.ro.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.rs-latin.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.rs.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.ru.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.sk.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.sl.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.sv.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.sw.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.th.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.tr.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.uk.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.zh-CN.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.zh-TW.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\tests\assets\coverage.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\tests\assets\jquery-1.7.1.min.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\tests\assets\mock.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\tests\assets\qunit-logging.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\tests\assets\qunit.css" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\tests\assets\qunit.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\tests\assets\utils.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\tests\run-qunit.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\tests\suites\calendar-weeks.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\tests\suites\component.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\tests\suites\data-api.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\tests\suites\events.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\tests\suites\formats.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\tests\suites\inline.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\tests\suites\keyboard_navigation\2011.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\tests\suites\keyboard_navigation\2012.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\tests\suites\keyboard_navigation\all.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\tests\suites\mouse_navigation\2011.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\tests\suites\mouse_navigation\2012.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\tests\suites\mouse_navigation\all.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\tests\suites\options.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\tests\tests.html" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\tests\_coverage.html" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-daterangepicker\date.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-daterangepicker\daterangepicker.css" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-daterangepicker\daterangepicker.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-daterangepicker\examples.html" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-fileupload\bootstrap-fileupload.css" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-fileupload\bootstrap-fileupload.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-tag\css\bootstrap-tag.css" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-tag\docs\assets\css\bootstrap-tag.css" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-tag\docs\index.html" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-tag\js\bootstrap-tag.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-timepicker\.gitignore" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-timepicker\compiled\timepicker.css" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-timepicker\js\bootstrap-timepicker.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-toggle-buttons\.gitignore" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-toggle-buttons\examples\index.html" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-toggle-buttons\static\js\jquery.min.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-toggle-buttons\static\js\jquery.toggle.buttons.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-toggle-buttons\static\stylesheets\bootstrap-toggle-buttons.css" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-tree\.gitignore" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-tree\bootstrap-tree\css\bootstrap-tree.css" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-tree\bootstrap-tree\img\ajax-loader.gif" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-tree\bootstrap-tree\img\bstree-halflings.png" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-tree\bootstrap-tree\img\bstree-halflings_.png" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-tree\bootstrap-tree\js\bootstrap-tree.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-tree\bootstrap\css\bootstrap-responsive.css" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-tree\bootstrap\css\bootstrap-responsive.min.css" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-tree\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-tree\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-tree\bootstrap\img\glyphicons-halflings-white.png" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-tree\bootstrap\img\glyphicons-halflings.png" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-tree\bootstrap\js\bootstrap.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-tree\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-tree\example.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-tree\htmlexample.html" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-tree\index.html" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-tree\xmlexample.xml" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-wizard\bootstrap\css\bootstrap-responsive.css" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-wizard\bootstrap\css\bootstrap-responsive.min.css" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-wizard\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-wizard\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-wizard\bootstrap\img\glyphicons-halflings-white.png" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-wizard\bootstrap\img\glyphicons-halflings.png" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-wizard\bootstrap\js\bootstrap.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-wizard\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-wizard\examples\basic-custombuttons.html" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-wizard\examples\basic-custombuttonsfirstlast.html" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-wizard\examples\basic-disabletabclick.html" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-wizard\examples\basic-finishbutton.html" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-wizard\examples\basic-formvalidation.html" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-wizard\examples\basic-inverse.html" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-wizard\examples\basic-pills.html" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-wizard\examples\basic-progressbar.html" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-wizard\examples\basic-tabsleft.html" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-wizard\examples\basic.html" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-wizard\examples\multiple.html" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-wizard\index.html" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-wizard\jquery.bootstrap.wizard.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-wizard\jquery.bootstrap.wizard.min.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-wizard\prettify.css" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-wizard\prettify.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-wysihtml5\bootstrap-wysihtml5.css" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-wysihtml5\bootstrap-wysihtml5.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-wysihtml5\wysihtml5-0.3.0.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-wysihtml5\wysiwyg-color.css" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap\css\bootstrap-responsive.css" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap\css\bootstrap-responsive.min.css" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap\img\glyphicons-halflings-white.png" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap\img\glyphicons-halflings.png" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap\js\bootstrap.js" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\themes\metronic\plugins\breakpoints\breakpoints.js" />
+    <Content Include="Content\themes\metronic\plugins\breakpoints\example.html" />
+    <Content Include="Content\themes\metronic\plugins\chosen-bootstrap\.gitignore" />
+    <Content Include="Content\themes\metronic\plugins\chosen-bootstrap\chosen\chosen-sprite.png" />
+    <Content Include="Content\themes\metronic\plugins\chosen-bootstrap\chosen\chosen.css" />
+    <Content Include="Content\themes\metronic\plugins\chosen-bootstrap\chosen\chosen.jquery.js" />
+    <Content Include="Content\themes\metronic\plugins\chosen-bootstrap\chosen\chosen.jquery.min.js" />
+    <Content Include="Content\themes\metronic\plugins\chosen-bootstrap\chosen\chosen.proto.js" />
+    <Content Include="Content\themes\metronic\plugins\chosen-bootstrap\chosen\chosen.proto.min.js" />
+    <Content Include="Content\themes\metronic\plugins\chosen-bootstrap\example.jquery.html" />
+    <Content Include="Content\themes\metronic\plugins\chosen-bootstrap\example.proto.html" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\build-config.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\ckeditor.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\config.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\contents.css" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\lang\af.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\lang\ar.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\lang\bg.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\lang\bn.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\lang\bs.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\lang\ca.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\lang\cs.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\lang\cy.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\lang\da.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\lang\de.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\lang\el.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\lang\en-au.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\lang\en-ca.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\lang\en-gb.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\lang\en.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\lang\eo.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\lang\es.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\lang\et.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\lang\eu.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\lang\fa.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\lang\fi.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\lang\fo.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\lang\fr-ca.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\lang\fr.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\lang\gl.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\lang\gu.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\lang\he.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\lang\hi.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\lang\hr.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\lang\hu.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\lang\is.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\lang\it.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\lang\ja.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\lang\ka.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\lang\km.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\lang\ko.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\lang\ku.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\lang\lt.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\lang\lv.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\lang\mk.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\lang\mn.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\lang\ms.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\lang\nb.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\lang\nl.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\lang\no.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\lang\pl.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\lang\pt-br.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\lang\pt.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\lang\ro.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\lang\ru.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\lang\sk.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\lang\sl.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\lang\sr-latn.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\lang\sr.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\lang\sv.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\lang\th.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\lang\tr.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\lang\ug.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\lang\uk.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\lang\vi.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\lang\zh-cn.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\lang\zh.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\a11yhelp\dialogs\a11yhelp.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\ar.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\bg.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\ca.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\cs.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\cy.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\da.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\de.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\el.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\en.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\eo.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\es.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\et.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\fa.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\fi.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\fr.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\gu.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\he.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\hi.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\hr.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\hu.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\it.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\ja.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\ku.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\lt.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\lv.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\mk.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\mn.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\nb.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\nl.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\no.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\pl.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\pt-br.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\pt.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\ro.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\ru.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\sk.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\sl.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\sv.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\tr.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\ug.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\uk.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\vi.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\zh-cn.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\a11yhelp\dialogs\lang\_translationstatus.txt" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\about\dialogs\about.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\about\dialogs\logo_ckeditor.png" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\clipboard\dialogs\paste.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\dialog\dialogDefinition.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\fakeobjects\images\spacer.gif" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\icons.png" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\image\dialogs\image.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\image\images\noimage.png" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\link\dialogs\anchor.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\link\dialogs\link.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\link\images\anchor.png" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\magicline\images\icon.png" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\pastefromword\filter\default.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\scayt\dialogs\options.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\scayt\dialogs\toolbar.css" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\specialchar\dialogs\lang\ca.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\specialchar\dialogs\lang\cs.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\specialchar\dialogs\lang\cy.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\specialchar\dialogs\lang\de.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\specialchar\dialogs\lang\el.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\specialchar\dialogs\lang\en.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\specialchar\dialogs\lang\eo.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\specialchar\dialogs\lang\et.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\specialchar\dialogs\lang\fa.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\specialchar\dialogs\lang\fi.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\specialchar\dialogs\lang\fr.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\specialchar\dialogs\lang\he.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\specialchar\dialogs\lang\hr.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\specialchar\dialogs\lang\it.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\specialchar\dialogs\lang\ku.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\specialchar\dialogs\lang\lv.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\specialchar\dialogs\lang\nb.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\specialchar\dialogs\lang\nl.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\specialchar\dialogs\lang\no.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\specialchar\dialogs\lang\pt-br.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\specialchar\dialogs\lang\sk.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\specialchar\dialogs\lang\sv.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\specialchar\dialogs\lang\tr.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\specialchar\dialogs\lang\ug.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\specialchar\dialogs\lang\zh-cn.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\specialchar\dialogs\lang\_translationstatus.txt" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\specialchar\dialogs\specialchar.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\tabletools\dialogs\tableCell.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\table\dialogs\table.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\wsc\dialogs\ciframe.html" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\wsc\dialogs\tmpFrameset.html" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\wsc\dialogs\wsc.css" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\wsc\dialogs\wsc.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\samples\ajax.html" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\samples\api.html" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\samples\appendto.html" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\samples\assets\inlineall\logo.png" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\samples\assets\outputxhtml\outputxhtml.css" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\samples\assets\sample.css" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\samples\assets\sample.jpg" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\samples\assets\uilanguages\languages.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\samples\divreplace.html" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\samples\index.html" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\samples\inlineall.html" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\samples\inlinebycode.html" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\samples\plugins\dialog\assets\my_dialog.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\samples\plugins\dialog\dialog.html" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\samples\plugins\enterkey\enterkey.html" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\samples\plugins\htmlwriter\assets\outputforflash\outputforflash.swf" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\samples\plugins\htmlwriter\assets\outputforflash\swfobject.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\samples\plugins\htmlwriter\outputforflash.html" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\samples\plugins\htmlwriter\outputhtml.html" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\samples\plugins\magicline\magicline.html" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\samples\plugins\toolbar\toolbar.html" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\samples\plugins\wysiwygarea\fullpage.html" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\samples\readonly.html" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\samples\replacebyclass.html" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\samples\replacebycode.html" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\samples\sample.css" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\samples\sample.js" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\samples\tabindex.html" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\samples\uicolor.html" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\samples\uilanguages.html" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\samples\xhtmlstyle.html" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\skins\moono\dialog.css" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\skins\moono\dialog_ie.css" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\skins\moono\dialog_ie7.css" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\skins\moono\dialog_ie8.css" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\skins\moono\dialog_iequirks.css" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\skins\moono\dialog_opera.css" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\skins\moono\editor.css" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\skins\moono\editor_gecko.css" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\skins\moono\editor_ie.css" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\skins\moono\editor_ie7.css" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\skins\moono\editor_ie8.css" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\skins\moono\editor_iequirks.css" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\skins\moono\icons.png" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\skins\moono\images\arrow.png" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\skins\moono\images\close.png" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\skins\moono\images\mini.png" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\styles.js" />
+    <Content Include="Content\themes\metronic\plugins\clockface\CHANGELOG.txt" />
+    <Content Include="Content\themes\metronic\plugins\clockface\css\clockface.css" />
+    <Content Include="Content\themes\metronic\plugins\clockface\js\clockface.js" />
+    <Content Include="Content\themes\metronic\plugins\data-tables\DT_bootstrap.css" />
+    <Content Include="Content\themes\metronic\plugins\data-tables\DT_bootstrap.js" />
+    <Content Include="Content\themes\metronic\plugins\data-tables\images\sort_asc.png" />
+    <Content Include="Content\themes\metronic\plugins\data-tables\images\sort_both.png" />
+    <Content Include="Content\themes\metronic\plugins\data-tables\images\sort_desc.png" />
+    <Content Include="Content\themes\metronic\plugins\data-tables\jquery.dataTables.js" />
+    <Content Include="Content\themes\metronic\plugins\dropzone\css\basic.css" />
+    <Content Include="Content\themes\metronic\plugins\dropzone\css\dropzone.css" />
+    <Content Include="Content\themes\metronic\plugins\dropzone\dropzone-amd-module.js" />
+    <Content Include="Content\themes\metronic\plugins\dropzone\dropzone.js" />
+    <Content Include="Content\themes\metronic\plugins\dropzone\images\spritemap%402x.png" />
+    <Content Include="Content\themes\metronic\plugins\dropzone\images\spritemap.png" />
+    <Content Include="Content\themes\metronic\plugins\excanvas.js" />
+    <Content Include="Content\themes\metronic\plugins\fancybox\.gitattributes" />
+    <Content Include="Content\themes\metronic\plugins\fancybox\demo\1_b.jpg" />
+    <Content Include="Content\themes\metronic\plugins\fancybox\demo\1_s.jpg" />
+    <Content Include="Content\themes\metronic\plugins\fancybox\demo\2_b.jpg" />
+    <Content Include="Content\themes\metronic\plugins\fancybox\demo\2_s.jpg" />
+    <Content Include="Content\themes\metronic\plugins\fancybox\demo\3_b.jpg" />
+    <Content Include="Content\themes\metronic\plugins\fancybox\demo\3_s.jpg" />
+    <Content Include="Content\themes\metronic\plugins\fancybox\demo\4_b.jpg" />
+    <Content Include="Content\themes\metronic\plugins\fancybox\demo\4_s.jpg" />
+    <Content Include="Content\themes\metronic\plugins\fancybox\demo\5_b.jpg" />
+    <Content Include="Content\themes\metronic\plugins\fancybox\demo\5_s.jpg" />
+    <Content Include="Content\themes\metronic\plugins\fancybox\demo\ajax.txt" />
+    <Content Include="Content\themes\metronic\plugins\fancybox\demo\iframe.html" />
+    <Content Include="Content\themes\metronic\plugins\fancybox\demo\index.html" />
+    <Content Include="Content\themes\metronic\plugins\fancybox\lib\jquery-1.8.2.min.js" />
+    <Content Include="Content\themes\metronic\plugins\fancybox\lib\jquery.mousewheel-3.0.6.pack.js" />
+    <Content Include="Content\themes\metronic\plugins\fancybox\source\blank.gif" />
+    <Content Include="Content\themes\metronic\plugins\fancybox\source\fancybox_loading.gif" />
+    <Content Include="Content\themes\metronic\plugins\fancybox\source\fancybox_overlay.png" />
+    <Content Include="Content\themes\metronic\plugins\fancybox\source\fancybox_sprite.png" />
+    <Content Include="Content\themes\metronic\plugins\fancybox\source\helpers\fancybox_buttons.png" />
+    <Content Include="Content\themes\metronic\plugins\fancybox\source\helpers\jquery.fancybox-buttons.css" />
+    <Content Include="Content\themes\metronic\plugins\fancybox\source\helpers\jquery.fancybox-buttons.js" />
+    <Content Include="Content\themes\metronic\plugins\fancybox\source\helpers\jquery.fancybox-media.js" />
+    <Content Include="Content\themes\metronic\plugins\fancybox\source\helpers\jquery.fancybox-thumbs.css" />
+    <Content Include="Content\themes\metronic\plugins\fancybox\source\helpers\jquery.fancybox-thumbs.js" />
+    <Content Include="Content\themes\metronic\plugins\fancybox\source\jquery.fancybox.css" />
+    <Content Include="Content\themes\metronic\plugins\fancybox\source\jquery.fancybox.js" />
+    <Content Include="Content\themes\metronic\plugins\fancybox\source\jquery.fancybox.pack.js" />
+    <Content Include="Content\themes\metronic\plugins\flot\API.txt" />
+    <Content Include="Content\themes\metronic\plugins\flot\examples\ajax.html" />
+    <Content Include="Content\themes\metronic\plugins\flot\examples\annotating.html" />
+    <Content Include="Content\themes\metronic\plugins\flot\examples\arrow-down.gif" />
+    <Content Include="Content\themes\metronic\plugins\flot\examples\arrow-left.gif" />
+    <Content Include="Content\themes\metronic\plugins\flot\examples\arrow-right.gif" />
+    <Content Include="Content\themes\metronic\plugins\flot\examples\arrow-up.gif" />
+    <Content Include="Content\themes\metronic\plugins\flot\examples\basic.html" />
+    <Content Include="Content\themes\metronic\plugins\flot\examples\graph-types.html" />
+    <Content Include="Content\themes\metronic\plugins\flot\examples\hs-2004-27-a-large_web.jpg" />
+    <Content Include="Content\themes\metronic\plugins\flot\examples\image.html" />
+    <Content Include="Content\themes\metronic\plugins\flot\examples\index.html" />
+    <Content Include="Content\themes\metronic\plugins\flot\examples\interacting-axes.html" />
+    <Content Include="Content\themes\metronic\plugins\flot\examples\interacting.html" />
+    <Content Include="Content\themes\metronic\plugins\flot\examples\layout.css" />
+    <Content Include="Content\themes\metronic\plugins\flot\examples\multiple-axes.html" />
+    <Content Include="Content\themes\metronic\plugins\flot\examples\navigate.html" />
+    <Content Include="Content\themes\metronic\plugins\flot\examples\percentiles.html" />
+    <Content Include="Content\themes\metronic\plugins\flot\examples\pie.html" />
+    <Content Include="Content\themes\metronic\plugins\flot\examples\realtime.html" />
+    <Content Include="Content\themes\metronic\plugins\flot\examples\resize.html" />
+    <Content Include="Content\themes\metronic\plugins\flot\examples\selection.html" />
+    <Content Include="Content\themes\metronic\plugins\flot\examples\setting-options.html" />
+    <Content Include="Content\themes\metronic\plugins\flot\examples\stacking.html" />
+    <Content Include="Content\themes\metronic\plugins\flot\examples\symbols.html" />
+    <Content Include="Content\themes\metronic\plugins\flot\examples\thresholding.html" />
+    <Content Include="Content\themes\metronic\plugins\flot\examples\time.html" />
+    <Content Include="Content\themes\metronic\plugins\flot\examples\tracking.html" />
+    <Content Include="Content\themes\metronic\plugins\flot\examples\turning-series.html" />
+    <Content Include="Content\themes\metronic\plugins\flot\examples\visitors.html" />
+    <Content Include="Content\themes\metronic\plugins\flot\examples\zooming.html" />
+    <Content Include="Content\themes\metronic\plugins\flot\excanvas.js" />
+    <Content Include="Content\themes\metronic\plugins\flot\excanvas.min.js" />
+    <Content Include="Content\themes\metronic\plugins\flot\FAQ.txt" />
+    <Content Include="Content\themes\metronic\plugins\flot\jquery.colorhelpers.js" />
+    <Content Include="Content\themes\metronic\plugins\flot\jquery.flot.crosshair.js" />
+    <Content Include="Content\themes\metronic\plugins\flot\jquery.flot.fillbetween.js" />
+    <Content Include="Content\themes\metronic\plugins\flot\jquery.flot.image.js" />
+    <Content Include="Content\themes\metronic\plugins\flot\jquery.flot.js" />
+    <Content Include="Content\themes\metronic\plugins\flot\jquery.flot.navigate.js" />
+    <Content Include="Content\themes\metronic\plugins\flot\jquery.flot.pie.js" />
+    <Content Include="Content\themes\metronic\plugins\flot\jquery.flot.resize.js" />
+    <Content Include="Content\themes\metronic\plugins\flot\jquery.flot.selection.js" />
+    <Content Include="Content\themes\metronic\plugins\flot\jquery.flot.stack.js" />
+    <Content Include="Content\themes\metronic\plugins\flot\jquery.flot.symbol.js" />
+    <Content Include="Content\themes\metronic\plugins\flot\jquery.flot.threshold.js" />
+    <Content Include="Content\themes\metronic\plugins\flot\jquery.js" />
+    <Content Include="Content\themes\metronic\plugins\flot\LICENSE.txt" />
+    <Content Include="Content\themes\metronic\plugins\flot\NEWS.txt" />
+    <Content Include="Content\themes\metronic\plugins\flot\PLUGINS.txt" />
+    <Content Include="Content\themes\metronic\plugins\flot\README.txt" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\.gitignore" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\css\font-awesome-ie7.min.css" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\css\font-awesome.css" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\css\font-awesome-ie7.min.css" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\css\font-awesome.css" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\css\font-awesome.min.css" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\css\prettify.css" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\css\site.css" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\ico\favicon.ico" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\img\contribution-sample.png" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\img\fort_awesome.jpg" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\img\glyphicons-halflings-white.png" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\img\glyphicons-halflings.png" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\js\backbone.min.js" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\js\bootstrap-222.min.js" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\js\index\index.js" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\js\jquery-1.7.1.min.js" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\js\prettify.min.js" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\js\underscore.min.js" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\less\twbs-222\tests\buttons.html" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\less\twbs-222\tests\css-tests.css" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\less\twbs-222\tests\css-tests.html" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\less\twbs-222\tests\forms-responsive.html" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\less\twbs-222\tests\forms.html" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\less\twbs-222\tests\navbar-fixed-top.html" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\less\twbs-222\tests\navbar-static-top.html" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\less\twbs-222\tests\navbar.html" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\design.html" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\index.html" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\test.html" />
+    <Content Include="Content\themes\metronic\plugins\fullcalendar\changelog.txt" />
+    <Content Include="Content\themes\metronic\plugins\fullcalendar\demos\agenda-views.html" />
+    <Content Include="Content\themes\metronic\plugins\fullcalendar\demos\basic-views.html" />
+    <Content Include="Content\themes\metronic\plugins\fullcalendar\demos\cupertino\images\animated-overlay.gif" />
+    <Content Include="Content\themes\metronic\plugins\fullcalendar\demos\cupertino\images\ui-bg_diagonals-thick_90_eeeeee_40x40.png" />
+    <Content Include="Content\themes\metronic\plugins\fullcalendar\demos\cupertino\images\ui-bg_flat_15_cd0a0a_40x100.png" />
+    <Content Include="Content\themes\metronic\plugins\fullcalendar\demos\cupertino\images\ui-bg_glass_100_e4f1fb_1x400.png" />
+    <Content Include="Content\themes\metronic\plugins\fullcalendar\demos\cupertino\images\ui-bg_glass_50_3baae3_1x400.png" />
+    <Content Include="Content\themes\metronic\plugins\fullcalendar\demos\cupertino\images\ui-bg_glass_80_d7ebf9_1x400.png" />
+    <Content Include="Content\themes\metronic\plugins\fullcalendar\demos\cupertino\images\ui-bg_highlight-hard_100_f2f5f7_1x100.png" />
+    <Content Include="Content\themes\metronic\plugins\fullcalendar\demos\cupertino\images\ui-bg_highlight-hard_70_000000_1x100.png" />
+    <Content Include="Content\themes\metronic\plugins\fullcalendar\demos\cupertino\images\ui-bg_highlight-soft_100_deedf7_1x100.png" />
+    <Content Include="Content\themes\metronic\plugins\fullcalendar\demos\cupertino\images\ui-bg_highlight-soft_25_ffef8f_1x100.png" />
+    <Content Include="Content\themes\metronic\plugins\fullcalendar\demos\cupertino\images\ui-icons_2694e8_256x240.png" />
+    <Content Include="Content\themes\metronic\plugins\fullcalendar\demos\cupertino\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\metronic\plugins\fullcalendar\demos\cupertino\images\ui-icons_3d80b3_256x240.png" />
+    <Content Include="Content\themes\metronic\plugins\fullcalendar\demos\cupertino\images\ui-icons_72a7cf_256x240.png" />
+    <Content Include="Content\themes\metronic\plugins\fullcalendar\demos\cupertino\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\themes\metronic\plugins\fullcalendar\demos\cupertino\theme.css" />
+    <Content Include="Content\themes\metronic\plugins\fullcalendar\demos\default.html" />
+    <Content Include="Content\themes\metronic\plugins\fullcalendar\demos\external-dragging.html" />
+    <Content Include="Content\themes\metronic\plugins\fullcalendar\demos\gcal.html" />
+    <Content Include="Content\themes\metronic\plugins\fullcalendar\demos\json.html" />
+    <Content Include="Content\themes\metronic\plugins\fullcalendar\demos\selectable.html" />
+    <Content Include="Content\themes\metronic\plugins\fullcalendar\demos\theme.html" />
+    <Content Include="Content\themes\metronic\plugins\fullcalendar\fullcalendar\fullcalendar.css" />
+    <Content Include="Content\themes\metronic\plugins\fullcalendar\fullcalendar\fullcalendar.js" />
+    <Content Include="Content\themes\metronic\plugins\fullcalendar\fullcalendar\fullcalendar.min.js" />
+    <Content Include="Content\themes\metronic\plugins\fullcalendar\fullcalendar\fullcalendar.print.css" />
+    <Content Include="Content\themes\metronic\plugins\fullcalendar\fullcalendar\gcal.js" />
+    <Content Include="Content\themes\metronic\plugins\fullcalendar\jquery\jquery-1.9.1.min.js" />
+    <Content Include="Content\themes\metronic\plugins\fullcalendar\jquery\jquery-ui-1.10.2.custom.min.js" />
+    <Content Include="Content\themes\metronic\plugins\fullcalendar\license.txt" />
+    <Content Include="Content\themes\metronic\plugins\glyphicons\css\glyphicons.css" />
+    <Content Include="Content\themes\metronic\plugins\glyphicons\css\style.css" />
+    <Content Include="Content\themes\metronic\plugins\glyphicons\fonts\glyphicons-regular.svg" />
+    <Content Include="Content\themes\metronic\plugins\glyphicons\images\glyphicons-white.png" />
+    <Content Include="Content\themes\metronic\plugins\glyphicons\images\glyphicons-white.svg" />
+    <Content Include="Content\themes\metronic\plugins\glyphicons\images\glyphicons.png" />
+    <Content Include="Content\themes\metronic\plugins\glyphicons\images\glyphicons.svg" />
+    <Content Include="Content\themes\metronic\plugins\glyphicons\index.html" />
+    <Content Include="Content\themes\metronic\plugins\glyphicons\scripts\modernizr.js" />
+    <Content Include="Content\themes\metronic\plugins\glyphicons\scripts\modernizr_license.txt" />
+    <Content Include="Content\themes\metronic\plugins\glyphicons_halflings\css\halflings.css" />
+    <Content Include="Content\themes\metronic\plugins\glyphicons_halflings\css\style.css" />
+    <Content Include="Content\themes\metronic\plugins\glyphicons_halflings\fonts\glyphiconshalflings-regular.svg" />
+    <Content Include="Content\themes\metronic\plugins\glyphicons_halflings\images\glyphicons_halflings-white.png" />
+    <Content Include="Content\themes\metronic\plugins\glyphicons_halflings\images\glyphicons_halflings-white.svg" />
+    <Content Include="Content\themes\metronic\plugins\glyphicons_halflings\images\glyphicons_halflings.png" />
+    <Content Include="Content\themes\metronic\plugins\glyphicons_halflings\images\glyphicons_halflings.svg" />
+    <Content Include="Content\themes\metronic\plugins\glyphicons_halflings\index.html" />
+    <Content Include="Content\themes\metronic\plugins\glyphicons_halflings\scripts\modernizr.js" />
+    <Content Include="Content\themes\metronic\plugins\glyphicons_halflings\scripts\modernizr_license.txt" />
+    <Content Include="Content\themes\metronic\plugins\gmaps.js" />
+    <Content Include="Content\themes\metronic\plugins\gritter\css\jquery.gritter.css" />
+    <Content Include="Content\themes\metronic\plugins\gritter\images\gritter-blue.png" />
+    <Content Include="Content\themes\metronic\plugins\gritter\images\gritter-brown.png" />
+    <Content Include="Content\themes\metronic\plugins\gritter\images\gritter-light.png" />
+    <Content Include="Content\themes\metronic\plugins\gritter\images\gritter-long.png" />
+    <Content Include="Content\themes\metronic\plugins\gritter\images\gritter-purple.png" />
+    <Content Include="Content\themes\metronic\plugins\gritter\images\gritter.png" />
+    <Content Include="Content\themes\metronic\plugins\gritter\images\ie-spacer.gif" />
+    <Content Include="Content\themes\metronic\plugins\gritter\images_original\gritter-light.png" />
+    <Content Include="Content\themes\metronic\plugins\gritter\images_original\gritter-long.png" />
+    <Content Include="Content\themes\metronic\plugins\gritter\images_original\gritter.png" />
+    <Content Include="Content\themes\metronic\plugins\gritter\images_original\ie-spacer.gif" />
+    <Content Include="Content\themes\metronic\plugins\gritter\images_original\trees.jpg" />
+    <Content Include="Content\themes\metronic\plugins\gritter\index.html" />
+    <Content Include="Content\themes\metronic\plugins\gritter\js\jquery.gritter.js" />
+    <Content Include="Content\themes\metronic\plugins\gritter\js\jquery.gritter.min.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-1.8.3.min.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-easy-pie-chart\examples\excanvas.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-easy-pie-chart\examples\index.html" />
+    <Content Include="Content\themes\metronic\plugins\jquery-easy-pie-chart\examples\style.css" />
+    <Content Include="Content\themes\metronic\plugins\jquery-easy-pie-chart\img\easy-pie-chart.png" />
+    <Content Include="Content\themes\metronic\plugins\jquery-easy-pie-chart\jquery.easy-pie-chart.css" />
+    <Content Include="Content\themes\metronic\plugins\jquery-easy-pie-chart\jquery.easy-pie-chart.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-file-upload\.gitignore" />
+    <Content Include="Content\themes\metronic\plugins\jquery-file-upload\cors\postmessage.html" />
+    <Content Include="Content\themes\metronic\plugins\jquery-file-upload\cors\result.html" />
+    <Content Include="Content\themes\metronic\plugins\jquery-file-upload\css\jquery.fileupload-ui-noscript.css" />
+    <Content Include="Content\themes\metronic\plugins\jquery-file-upload\css\jquery.fileupload-ui.css" />
+    <Content Include="Content\themes\metronic\plugins\jquery-file-upload\css\style.css" />
+    <Content Include="Content\themes\metronic\plugins\jquery-file-upload\img\loading.gif" />
+    <Content Include="Content\themes\metronic\plugins\jquery-file-upload\img\progressbar.gif" />
+    <Content Include="Content\themes\metronic\plugins\jquery-file-upload\index.html" />
+    <Content Include="Content\themes\metronic\plugins\jquery-file-upload\js\cors\jquery.postmessage-transport.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-file-upload\js\cors\jquery.xdr-transport.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-file-upload\js\jquery.fileupload-fp.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-file-upload\js\jquery.fileupload-ui.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-file-upload\js\jquery.fileupload.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-file-upload\js\jquery.iframe-transport.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-file-upload\js\main.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-file-upload\js\vendor\canvas-to-blob.min.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-file-upload\js\vendor\jquery.ui.widget.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-file-upload\js\vendor\load-image.min.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-file-upload\js\vendor\tmpl.min.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-file-upload\server\gae-go\static\favicon.ico" />
+    <Content Include="Content\themes\metronic\plugins\jquery-file-upload\server\gae-go\static\robots.txt" />
+    <Content Include="Content\themes\metronic\plugins\jquery-file-upload\server\gae-python\static\favicon.ico" />
+    <Content Include="Content\themes\metronic\plugins\jquery-file-upload\server\gae-python\static\robots.txt" />
+    <Content Include="Content\themes\metronic\plugins\jquery-file-upload\server\node\.gitignore" />
+    <Content Include="Content\themes\metronic\plugins\jquery-file-upload\server\node\public\files\thumbnail\.gitignore" />
+    <Content Include="Content\themes\metronic\plugins\jquery-file-upload\server\node\server.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-file-upload\server\php\files\style-responsive.css" />
+    <Content Include="Content\themes\metronic\plugins\jquery-file-upload\test\index.html" />
+    <Content Include="Content\themes\metronic\plugins\jquery-file-upload\test\test.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-inputmask\jquery.inputmask.bundle.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-inputmask\jquery.inputmask.bundle.min.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-jexpand\img\125px-Flag_of_Canada.svg.png" />
+    <Content Include="Content\themes\metronic\plugins\jquery-jexpand\img\125px-Flag_of_Germany.svg.png" />
+    <Content Include="Content\themes\metronic\plugins\jquery-jexpand\img\125px-Flag_of_India.svg.png" />
+    <Content Include="Content\themes\metronic\plugins\jquery-jexpand\img\125px-Flag_of_the_United_Kingdom.svg.png" />
+    <Content Include="Content\themes\metronic\plugins\jquery-jexpand\img\125px-Flag_of_the_United_States.svg.png" />
+    <Content Include="Content\themes\metronic\plugins\jquery-jexpand\img\arrows.png" />
+    <Content Include="Content\themes\metronic\plugins\jquery-jexpand\img\arrows_bk.png" />
+    <Content Include="Content\themes\metronic\plugins\jquery-jexpand\img\header_bkg.png" />
+    <Content Include="Content\themes\metronic\plugins\jquery-jexpand\img\row_bkg.png" />
+    <Content Include="Content\themes\metronic\plugins\jquery-jexpand\jExpand.css" />
+    <Content Include="Content\themes\metronic\plugins\jquery-jexpand\jExpand.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-knob\index.html" />
+    <Content Include="Content\themes\metronic\plugins\jquery-knob\js\jquery.knob.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-nestable\index.html" />
+    <Content Include="Content\themes\metronic\plugins\jquery-nestable\jquery.nestable.css" />
+    <Content Include="Content\themes\metronic\plugins\jquery-nestable\jquery.nestable.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-slimscroll\examples\allow-page-scroll.html" />
+    <Content Include="Content\themes\metronic\plugins\jquery-slimscroll\examples\chaining.html" />
+    <Content Include="Content\themes\metronic\plugins\jquery-slimscroll\examples\disable-fade-out.html" />
+    <Content Include="Content\themes\metronic\plugins\jquery-slimscroll\examples\height-width.html" />
+    <Content Include="Content\themes\metronic\plugins\jquery-slimscroll\examples\libs\prettify\prettify.css" />
+    <Content Include="Content\themes\metronic\plugins\jquery-slimscroll\examples\libs\prettify\prettify.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-slimscroll\examples\mouse-wheel.html" />
+    <Content Include="Content\themes\metronic\plugins\jquery-slimscroll\examples\multiple-elements.html" />
+    <Content Include="Content\themes\metronic\plugins\jquery-slimscroll\examples\programmatic-scrolling.html" />
+    <Content Include="Content\themes\metronic\plugins\jquery-slimscroll\examples\rail.html" />
+    <Content Include="Content\themes\metronic\plugins\jquery-slimscroll\examples\scrollbar.html" />
+    <Content Include="Content\themes\metronic\plugins\jquery-slimscroll\examples\start-position.html" />
+    <Content Include="Content\themes\metronic\plugins\jquery-slimscroll\examples\style.css" />
+    <Content Include="Content\themes\metronic\plugins\jquery-slimscroll\examples\top-bottom-events.html" />
+    <Content Include="Content\themes\metronic\plugins\jquery-slimscroll\jquery-ui-1.9.2.custom.min.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-slimscroll\jquery.slimscroll.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-slimscroll\jquery.slimscroll.min.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-tags-input\example.html" />
+    <Content Include="Content\themes\metronic\plugins\jquery-tags-input\jquery.tagsinput.css" />
+    <Content Include="Content\themes\metronic\plugins\jquery-tags-input\jquery.tagsinput.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-tags-input\jquery.tagsinput.min.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-tags-input\test\fake_json_endpoint.html" />
+    <Content Include="Content\themes\metronic\plugins\jquery-tags-input\test\fake_plaintext_endpoint.html" />
+    <Content Include="Content\themes\metronic\plugins\jquery-ui-touch-punch\jquery.ui.touch-punch.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-ui-touch-punch\jquery.ui.touch-punch.min.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-ui\images\animated-overlay.gif" />
+    <Content Include="Content\themes\metronic\plugins\jquery-ui\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="Content\themes\metronic\plugins\jquery-ui\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Content\themes\metronic\plugins\jquery-ui\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\metronic\plugins\jquery-ui\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Content\themes\metronic\plugins\jquery-ui\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\metronic\plugins\jquery-ui\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Content\themes\metronic\plugins\jquery-ui\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Content\themes\metronic\plugins\jquery-ui\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\metronic\plugins\jquery-ui\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\metronic\plugins\jquery-ui\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\metronic\plugins\jquery-ui\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\metronic\plugins\jquery-ui\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\metronic\plugins\jquery-ui\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="Content\themes\metronic\plugins\jquery-ui\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Content\themes\metronic\plugins\jquery-ui\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\metronic\plugins\jquery-ui\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Content\themes\metronic\plugins\jquery-ui\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\metronic\plugins\jquery-ui\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="Content\themes\metronic\plugins\jquery-ui\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\metronic\plugins\jquery-ui\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\metronic\plugins\jquery-ui\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\metronic\plugins\jquery-ui\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\metronic\plugins\jquery-ui\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="Content\themes\metronic\plugins\jquery-ui\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="Content\themes\metronic\plugins\jquery-ui\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\themes\metronic\plugins\jquery-ui\jquery-ui-1.10.1.custom.css" />
+    <Content Include="Content\themes\metronic\plugins\jquery-ui\jquery-ui-1.10.1.custom.min.css" />
+    <Content Include="Content\themes\metronic\plugins\jquery-ui\jquery-ui-1.10.1.custom.min.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-ui\jquery-ui-1.10.2.custom.min.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-ui\jquery-ui-1.9.2.custom.min.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\changelog.txt" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\ajaxSubmit-intergration-demo.html" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\captcha\captcha.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\captcha\images\button.png" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\captcha\style.css" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\css\chili.css" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\css\cmxform.css" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\css\cmxformTemplate.css" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\css\core.css" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\css\reset.css" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\css\screen.css" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\custom-messages-data-demo.html" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\custom-methods-demo.html" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\dynamic-totals.html" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\errorcontainer-demo.html" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\file_input.html" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\images\bg.gif" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\images\checked.gif" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\images\cmxform-divider.gif" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\images\cmxform-fieldset.gif" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\images\loading.gif" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\images\unchecked.gif" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\index.html" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\jquerymobile.html" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\js\chili-1.7.pack.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\login\images\bg.gif" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\login\images\header1.jpg" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\login\images\page.gif" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\login\images\required_star.gif" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\login\index.html" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\login\screen.css" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\marketo\ie6.css" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\marketo\images\backRequiredGray.gif" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\marketo\images\back_green-fade.gif" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\marketo\images\back_nav_blue.gif" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\marketo\images\blank.gif" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\marketo\images\button-submit.gif" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\marketo\images\favicon.ico" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\marketo\images\help.png" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\marketo\images\left-nav-callout-long.png" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\marketo\images\login-sprite.gif" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\marketo\images\logo_marketo.gif" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\marketo\images\sf.png" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\marketo\images\step1-24.gif" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\marketo\images\step2-24.gif" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\marketo\images\step3-24.gif" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\marketo\images\tab-sprite.gif" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\marketo\images\tab_green.gif" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\marketo\images\time.png" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\marketo\images\toggle.gif" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\marketo\images\warning.gif" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\marketo\index.html" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\marketo\jquery.maskedinput.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\marketo\mktSignup.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\marketo\step2.htm" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\marketo\stylesheet.css" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\milk\bg.gif" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\milk\index.html" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\milk\left_white.png" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\milk\milk.css" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\milk\milk.png" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\milk\right_white.png" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\multipart\index.html" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\multipart\js\jquery.maskedinput-1.0.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\multipart\js\ui.accordion.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\multipart\js\ui.core.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\multipart\style.css" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\radio-checkbox-select-demo.html" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\tabs\index.html" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\themerollered.html" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\tinymce\index.html" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\tinymce\themes\simple\editor_template.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\tinymce\themes\simple\img\icons.gif" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\tinymce\themes\simple\langs\en.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\tinymce\themes\simple\skins\default\ui.css" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\tinymce\tiny_mce.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\grunt.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\lib\jquery-1.6.4.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\lib\jquery-1.7.2.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\lib\jquery-1.8.3.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\lib\jquery-1.9.0.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\lib\jquery.form.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\lib\jquery.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\lib\jquery.mockjax.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\localization\messages_ar.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\localization\messages_bg.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\localization\messages_ca.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\localization\messages_cs.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\localization\messages_da.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\localization\messages_de.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\localization\messages_el.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\localization\messages_es.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\localization\messages_et.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\localization\messages_eu.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\localization\messages_fa.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\localization\messages_fi.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\localization\messages_fr.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\localization\messages_he.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\localization\messages_hr.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\localization\messages_hu.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\localization\messages_it.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\localization\messages_ja.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\localization\messages_ka.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\localization\messages_kk.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\localization\messages_lt.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\localization\messages_lv.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\localization\messages_my.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\localization\messages_nl.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\localization\messages_no.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\localization\messages_pl.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\localization\messages_pt_BR.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\localization\messages_pt_PT.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\localization\messages_ro.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\localization\messages_ru.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\localization\messages_si.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\localization\messages_sk.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\localization\messages_sl.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\localization\messages_sr.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\localization\messages_sv.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\localization\messages_th.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\localization\messages_tr.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\localization\messages_uk.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\localization\messages_vi.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\localization\messages_zh.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\localization\messages_zh_TW.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\localization\methods_de.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\localization\methods_nl.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\localization\methods_pt.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\test\events.html" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\test\firebug\errorIcon.png" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\test\firebug\firebug.css" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\test\firebug\firebug.html" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\test\firebug\firebug.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\test\firebug\firebugx.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\test\firebug\infoIcon.png" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\test\firebug\warningIcon.png" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\test\index.html" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\test\jquery.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\test\large.html" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\test\messages.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\test\methods.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\test\qunit\qunit.css" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\test\qunit\qunit.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\test\rules.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\test\selects\index.html" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\test\tabs.html" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\test\test.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery.blockui.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery.bootpag.min.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery.cookie.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery.input-ip-address-control-1.0.min.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery.pulsate.min.js" />
+    <Content Include="Content\themes\metronic\plugins\jquery.sparkline.min.js" />
+    <Content Include="Content\themes\metronic\plugins\jqvmap\.gitignore" />
+    <Content Include="Content\themes\metronic\plugins\jqvmap\jqvmap\data\jquery.vmap.sampledata.js" />
+    <Content Include="Content\themes\metronic\plugins\jqvmap\jqvmap\jquery.vmap.js" />
+    <Content Include="Content\themes\metronic\plugins\jqvmap\jqvmap\jquery.vmap.min.js" />
+    <Content Include="Content\themes\metronic\plugins\jqvmap\jqvmap\jquery.vmap.packed.js" />
+    <Content Include="Content\themes\metronic\plugins\jqvmap\jqvmap\jqvmap.css" />
+    <Content Include="Content\themes\metronic\plugins\jqvmap\jqvmap\maps\jquery.vmap.europe.js" />
+    <Content Include="Content\themes\metronic\plugins\jqvmap\jqvmap\maps\jquery.vmap.germany.js" />
+    <Content Include="Content\themes\metronic\plugins\jqvmap\jqvmap\maps\jquery.vmap.russia.js" />
+    <Content Include="Content\themes\metronic\plugins\jqvmap\jqvmap\maps\jquery.vmap.usa.js" />
+    <Content Include="Content\themes\metronic\plugins\jqvmap\jqvmap\maps\jquery.vmap.world.js" />
+    <Content Include="Content\themes\metronic\plugins\jqvmap\samples\europe.html" />
+    <Content Include="Content\themes\metronic\plugins\jqvmap\samples\germany.html" />
+    <Content Include="Content\themes\metronic\plugins\jqvmap\samples\multi.html" />
+    <Content Include="Content\themes\metronic\plugins\jqvmap\samples\russia.html" />
+    <Content Include="Content\themes\metronic\plugins\jqvmap\samples\usa.html" />
+    <Content Include="Content\themes\metronic\plugins\jqvmap\samples\world.html" />
+    <Content Include="Content\themes\metronic\plugins\respond.js" />
+    <Content Include="Content\themes\metronic\plugins\select2\select2-spinner.gif" />
+    <Content Include="Content\themes\metronic\plugins\select2\select2.css" />
+    <Content Include="Content\themes\metronic\plugins\select2\select2.js" />
+    <Content Include="Content\themes\metronic\plugins\select2\select2.min.js" />
+    <Content Include="Content\themes\metronic\plugins\select2\select2.png" />
+    <Content Include="Content\themes\metronic\plugins\select2\select2x2.png" />
+    <Content Include="Content\themes\metronic\plugins\select2\select2_locale_de.js" />
+    <Content Include="Content\themes\metronic\plugins\select2\select2_locale_es.js" />
+    <Content Include="Content\themes\metronic\plugins\select2\select2_locale_eu.js" />
+    <Content Include="Content\themes\metronic\plugins\select2\select2_locale_fr.js" />
+    <Content Include="Content\themes\metronic\plugins\select2\select2_locale_hr.js" />
+    <Content Include="Content\themes\metronic\plugins\select2\select2_locale_hu.js" />
+    <Content Include="Content\themes\metronic\plugins\select2\select2_locale_it.js" />
+    <Content Include="Content\themes\metronic\plugins\select2\select2_locale_nl.js" />
+    <Content Include="Content\themes\metronic\plugins\select2\select2_locale_pt-BR.js" />
+    <Content Include="Content\themes\metronic\plugins\select2\select2_locale_pt-PT.js" />
+    <Content Include="Content\themes\metronic\plugins\select2\select2_locale_ro.js" />
+    <Content Include="Content\themes\metronic\plugins\select2\select2_locale_ru.js" />
+    <Content Include="Content\themes\metronic\plugins\select2\select2_locale_sk.js" />
+    <Content Include="Content\themes\metronic\plugins\select2\select2_locale_sv.js" />
+    <Content Include="Content\themes\metronic\plugins\select2\select2_locale_tr.js" />
+    <Content Include="Content\themes\metronic\plugins\select2\select2_locale_ua.js" />
+    <Content Include="Content\themes\metronic\plugins\select2\select2_locale_zh-CN.js" />
+    <Content Include="Content\themes\metronic\plugins\select2\select2_metro.css" />
+    <Content Include="Content\themes\metronic\plugins\uniform\css\uniform.default.css" />
+    <Content Include="Content\themes\metronic\plugins\uniform\demo\demo.html" />
+    <Content Include="Content\themes\metronic\plugins\uniform\images\bg-input-focus.png" />
+    <Content Include="Content\themes\metronic\plugins\uniform\images\bg-input.png" />
+    <Content Include="Content\themes\metronic\plugins\uniform\images\sprite.png" />
+    <Content Include="Content\themes\metronic\plugins\uniform\images\sprite_original.png" />
+    <Content Include="Content\themes\metronic\plugins\uniform\jquery.uniform.js" />
+    <Content Include="Content\themes\metronic\plugins\uniform\jquery.uniform.min.js" />
+    <Content Include="Content\themes\metronic\scripts\app.js" />
+    <Content Include="Content\themes\metronic\scripts\calendar.js" />
+    <Content Include="Content\themes\metronic\scripts\charts.js" />
+    <Content Include="Content\themes\metronic\scripts\contact-us.js" />
+    <Content Include="Content\themes\metronic\scripts\form-components.js" />
+    <Content Include="Content\themes\metronic\scripts\form-fileupload.js" />
+    <Content Include="Content\themes\metronic\scripts\form-samples.js" />
+    <Content Include="Content\themes\metronic\scripts\form-validation.js" />
+    <Content Include="Content\themes\metronic\scripts\form-wizard.js" />
+    <Content Include="Content\themes\metronic\scripts\gallery.js" />
+    <Content Include="Content\themes\metronic\scripts\inbox.js" />
+    <Content Include="Content\themes\metronic\scripts\index.js" />
+    <Content Include="Content\themes\metronic\scripts\login.js" />
+    <Content Include="Content\themes\metronic\scripts\maps-google.js" />
+    <Content Include="Content\themes\metronic\scripts\maps-vector.js" />
+    <Content Include="Content\themes\metronic\scripts\portlet-draggable.js" />
+    <Content Include="Content\themes\metronic\scripts\search.js" />
+    <Content Include="Content\themes\metronic\scripts\table-editable.js" />
+    <Content Include="Content\themes\metronic\scripts\table-jexpand.js" />
+    <Content Include="Content\themes\metronic\scripts\table-managed.js" />
+    <Content Include="Content\themes\metronic\scripts\ui-general.js" />
+    <Content Include="Content\themes\metronic\scripts\ui-jqueryui.js" />
+    <Content Include="Content\themes\metronic\scripts\ui-nestable.js" />
+    <Content Include="Content\themes\metronic\scripts\ui-sliders.js" />
+    <Content Include="Content\themes\metronic\scripts\ui-tree.js" />
+    <Content Include="Global.asax" />
+    <Content Include="Areas\Document\Views\Document\Index.cshtml" />
+    <Content Include="Areas\Document\_ViewStart.cshtml" />
+    <Content Include="Areas\Document\Web.config" />
+    <Content Include="Areas\Document\Views\Document\Form.cshtml" />
+    <Content Include="CodeTemplates\AddView\CSHTML\Create.tt" />
+    <Content Include="CodeTemplates\AddView\CSHTML\Delete.tt" />
+    <Content Include="CodeTemplates\AddView\CSHTML\Details.tt" />
+    <Content Include="CodeTemplates\AddView\CSHTML\Edit.tt" />
+    <Content Include="CodeTemplates\AddView\CSHTML\Empty.tt" />
+    <Content Include="CodeTemplates\AddView\CSHTML\List.tt" />
+    <Content Include="CodeTemplates\AddView\CSHTML\ListAjax.tt" />
+    <Content Include="Areas\Email\Views\Web.config" />
+    <Content Include="Areas\Email\Web.config" />
+    <Content Include="Areas\Email\_ViewStart.cshtml" />
+    <Content Include="Areas\Email\Views\EmailConfiguration\Index.cshtml" />
+    <Content Include="Areas\Email\Views\EmailConfiguration\List.cshtml" />
+    <Content Include="Areas\Log\_ViewStart.cshtml" />
+    <Content Include="Areas\Log\Views\Web.config" />
+    <Content Include="CodeTemplates\AddView\CSHTML\FormAjax.tt" />
+    <Content Include="Areas\Log\Web.config" />
+    <Content Include="Areas\Log\Views\Log\List.cshtml" />
+    <Content Include="Areas\CEP\Views\Web.config" />
+    <Content Include="Content\styles\custom.less" />
+    <Content Include="Areas\User\Views\Login\ForgotPassword.cshtml" />
+    <Content Include="Areas\User\Views\Login\Index.cshtml" />
+    <Content Include="Areas\User\Views\Shared\Layout.cshtml" />
+    <Content Include="Areas\User\Views\User\EditorTemplates\AuthLevelViewModel.cshtml" />
+    <Content Include="Areas\User\Views\User\Form.cshtml" />
+    <Content Include="Areas\User\Views\User\List.cshtml" />
+    <Content Include="Areas\User\Views\User\Resume.cshtml" />
+    <Content Include="Areas\User\Views\Web.config" />
+    <Content Include="Areas\User\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Ocorrencias\Views\Web.config" />
+    <Content Include="Areas\Ocorrencias\Views\Ocorrencia\List.cshtml" />
+    <Content Include="Areas\Ocorrencias\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Ocorrencias\Views\Ocorrencia\Form.cshtml" />
+    <None Include="Properties\PublishProfiles\gabrielcapano - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\gabrielcapano - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\hmgtp - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\hmgtp - Web Deploy.pubxml" />
+    <Content Include="Scripts\digdin-list-module.js" />
+    <None Include="Properties\PublishProfiles\Produção.pubxml" />
+    <Content Include="Scripts\digdin.min.js.map">
+      <DependentUpon>digdin.min.js</DependentUpon>
+    </Content>
+    <None Include="Properties\PublishProfiles\sitecethack.pubxml" />
+    <None Include="Scripts\jquery-1.6.4-vsdoc.js" />
+    <Content Include="Scripts\digdin.js" />
+    <Content Include="Scripts\jquery-1.6.4.js" />
+    <Content Include="Scripts\jquery-1.6.4.min.js" />
+    <Content Include="Scripts\jquery-ui-1.10.3.js" />
+    <Content Include="Scripts\jquery-ui-1.10.3.min.js" />
+    <Content Include="Scripts\jquery.maskedinput-1.3.1.js" />
+    <Content Include="Scripts\jquery.maskedinput-1.3.1.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.signalR-2.0.2.js" />
+    <Content Include="Scripts\jquery.signalR-2.0.2.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\jquery.maskMoney.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <None Include="T4MVC.tt.settings.xml" />
+    <Content Include="Scripts\signalr-alerts.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js.map">
+      <DependentUpon>jquery.validate.unobtrusive.js</DependentUpon>
+    </Content>
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\LayoutFront.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\CEP\Models\" />
+    <Folder Include="Areas\CEP\Views\Shared\" />
+    <Folder Include="Areas\Document\Views\Shared\" />
+    <Folder Include="Areas\Email\Views\Shared\" />
+    <Folder Include="Areas\Log\Models\" />
+    <Folder Include="Areas\Log\Views\Shared\" />
+    <Folder Include="Areas\Ocorrencias\Views\Shared\" />
+    <Folder Include="Content\docs\" />
+    <Folder Include="Content\themes\metronic\plugins\jquery-file-upload\server\node\tmp\" />
+    <Folder Include="Content\themes\metronic\plugins\jquery-file-upload\server\php\files\thumbnail\" />
+    <Folder Include="Content\themes\metronic\plugins\jquery-validation\dist\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Business\Business.csproj">
+      <Project>{5463f4f7-91f3-4437-aaf8-0bd9e36d4aca}</Project>
+      <Name>Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{6e8da882-c5f9-4bea-9639-fe0404f8909b}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\themes\metronic\fonts\cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\themes\metronic\fonts\DXI1ORHCpsQm3Vp6mXoaTXhCUOGz7vYGh680lGh-uXM.woff">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\themes\metronic\fonts\k3k702ZOKiLJc3WVjuplzHhCUOGz7vYGh680lGh-uXM.woff">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\themes\metronic\fonts\MTP_ySUJH_bn48VBG8sNSnhCUOGz7vYGh680lGh-uXM.woff">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\themes\metronic\plugins\bootstrap-colorpicker\less\colorpicker.less" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\.hgignore" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\.travis.yml" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\build\build.less" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\build\build_standalone.less" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\CHANGELOG.md" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\component.json" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\CONTRIBUTING.md" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\less\datepicker.less" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\LICENSE" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\README.md" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-datepicker\tests\README.md" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-daterangepicker\README.md" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-tag\less\bootstrap-tag.less" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-tag\README.md" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-timepicker\less\timepicker.less" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-timepicker\README.md" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-toggle-buttons\LICENSE" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-toggle-buttons\README.md" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-toggle-buttons\static\config.rb" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-toggle-buttons\static\sass\bootstrap-toggle-buttons.scss" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-tree\jsonexample.json" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-tree\README.md" />
+    <Content Include="Content\themes\metronic\plugins\bootstrap-wizard\README.md" />
+    <Content Include="Content\themes\metronic\plugins\breakpoints\README.md" />
+    <Content Include="Content\themes\metronic\plugins\chosen-bootstrap\Cakefile" />
+    <Content Include="Content\themes\metronic\plugins\chosen-bootstrap\chosen\lib\chosen.less" />
+    <Content Include="Content\themes\metronic\plugins\chosen-bootstrap\coffee\chosen.jquery.coffee" />
+    <Content Include="Content\themes\metronic\plugins\chosen-bootstrap\coffee\chosen.proto.coffee" />
+    <Content Include="Content\themes\metronic\plugins\chosen-bootstrap\coffee\lib\abstract-chosen.coffee" />
+    <Content Include="Content\themes\metronic\plugins\chosen-bootstrap\coffee\lib\select-parser.coffee" />
+    <Content Include="Content\themes\metronic\plugins\chosen-bootstrap\LICENSE.md" />
+    <Content Include="Content\themes\metronic\plugins\chosen-bootstrap\package.json" />
+    <Content Include="Content\themes\metronic\plugins\chosen-bootstrap\README.md" />
+    <Content Include="Content\themes\metronic\plugins\chosen-bootstrap\VERSION" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\CHANGES.md" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\LICENSE.md" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\scayt\LICENSE.md" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\scayt\README.md" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\wsc\LICENSE.md" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\plugins\wsc\README.md" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\README.md" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\samples\assets\posteddata.php" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\samples\plugins\htmlwriter\assets\outputforflash\outputforflash.fla" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\samples\sample_posteddata.php" />
+    <Content Include="Content\themes\metronic\plugins\ckeditor\skins\moono\readme.md" />
+    <Content Include="Content\themes\metronic\plugins\clockface\LICENSE-MIT" />
+    <Content Include="Content\themes\metronic\plugins\clockface\README.md" />
+    <Content Include="Content\themes\metronic\plugins\dropzone\css\stylus\basic.styl" />
+    <Content Include="Content\themes\metronic\plugins\dropzone\css\stylus\dropzone.styl" />
+    <Content Include="Content\themes\metronic\plugins\dropzone\upload.php" />
+    <Content Include="Content\themes\metronic\plugins\fancybox\CHANGELOG.md" />
+    <Content Include="Content\themes\metronic\plugins\fancybox\README.md" />
+    <Content Include="Content\themes\metronic\plugins\flot\examples\data-eu-gdp-growth-1.json" />
+    <Content Include="Content\themes\metronic\plugins\flot\examples\data-eu-gdp-growth-2.json" />
+    <Content Include="Content\themes\metronic\plugins\flot\examples\data-eu-gdp-growth-3.json" />
+    <Content Include="Content\themes\metronic\plugins\flot\examples\data-eu-gdp-growth-4.json" />
+    <Content Include="Content\themes\metronic\plugins\flot\examples\data-eu-gdp-growth-5.json" />
+    <Content Include="Content\themes\metronic\plugins\flot\examples\data-eu-gdp-growth.json" />
+    <Content Include="Content\themes\metronic\plugins\flot\examples\data-japan-gdp-growth.json" />
+    <Content Include="Content\themes\metronic\plugins\flot\examples\data-usa-gdp-growth.json" />
+    <Content Include="Content\themes\metronic\plugins\flot\Makefile" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\font\fontawesome-webfont.eot" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\font\fontawesome-webfont.ttf" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\font\fontawesome-webfont.woff" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\font\FontAwesome.otf" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\font\museo_slab_300-webfont.eot" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\font\museo_slab_300-webfont.ttf" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\font\museo_slab_500-webfont.eot" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\font\museo_slab_500-webfont.ttf" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\font\proximanova-sbold-webfont.eot" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\font\proximanova-sbold-webfont.ttf" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\font\proximanova-webfont.eot" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\font\proximanova-webfont.ttf" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\img\icon-flag.pdf" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\less\font-awesome-ie7.less" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\less\font-awesome.less" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\less\font-site.less" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\less\mixins.less" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\less\site.less" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\less\twbs-222\accordion.less" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\less\twbs-222\alerts.less" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\less\twbs-222\bootstrap.less" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\less\twbs-222\breadcrumbs.less" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\less\twbs-222\button-groups.less" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\less\twbs-222\buttons.less" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\less\twbs-222\carousel.less" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\less\twbs-222\close.less" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\less\twbs-222\code.less" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\less\twbs-222\component-animations.less" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\less\twbs-222\dropdowns.less" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\less\twbs-222\forms.less" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\less\twbs-222\grid.less" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\less\twbs-222\hero-unit.less" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\less\twbs-222\labels-badges.less" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\less\twbs-222\layouts.less" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\less\twbs-222\media.less" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\less\twbs-222\mixins.less" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\less\twbs-222\modals.less" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\less\twbs-222\navbar.less" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\less\twbs-222\navs.less" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\less\twbs-222\pager.less" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\less\twbs-222\pagination.less" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\less\twbs-222\popovers.less" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\less\twbs-222\progress-bars.less" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\less\twbs-222\reset.less" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\less\twbs-222\responsive-1200px-min.less" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\less\twbs-222\responsive-767px-max.less" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\less\twbs-222\responsive-768px-979px.less" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\less\twbs-222\responsive-navbar.less" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\less\twbs-222\responsive-utilities.less" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\less\twbs-222\responsive.less" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\less\twbs-222\scaffolding.less" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\less\twbs-222\sprites.less" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\less\twbs-222\tables.less" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\less\twbs-222\thumbnails.less" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\less\twbs-222\tooltip.less" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\less\twbs-222\type.less" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\less\twbs-222\utilities.less" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\less\twbs-222\variables.less" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\less\twbs-222\wells.less" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\docs\assets\less\variables.less" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\font\fontawesome-webfont.eot">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\themes\metronic\plugins\font-awesome\font\fontawesome-webfont.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\themes\metronic\plugins\font-awesome\font\fontawesome-webfont.woff">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\themes\metronic\plugins\font-awesome\font\FontAwesome.otf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\themes\metronic\plugins\font-awesome\less\font-awesome-ie7.less" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\less\font-awesome.less" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\README.md" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\sass\font-awesome.sass" />
+    <Content Include="Content\themes\metronic\plugins\font-awesome\sass\font-awesome.scss" />
+    <Content Include="Content\themes\metronic\plugins\fullcalendar\demos\json-events.php" />
+    <Content Include="Content\themes\metronic\plugins\glyphicons\fonts\glyphicons-regular.eot" />
+    <Content Include="Content\themes\metronic\plugins\glyphicons\fonts\glyphicons-regular.otf" />
+    <Content Include="Content\themes\metronic\plugins\glyphicons\fonts\glyphicons-regular.ttf" />
+    <Content Include="Content\themes\metronic\plugins\glyphicons\fonts\glyphicons-regular.woff" />
+    <Content Include="Content\themes\metronic\plugins\glyphicons\less\glyphicons.less" />
+    <Content Include="Content\themes\metronic\plugins\glyphicons\less\reset.less" />
+    <Content Include="Content\themes\metronic\plugins\glyphicons\less\site.less" />
+    <Content Include="Content\themes\metronic\plugins\glyphicons\less\style.less" />
+    <Content Include="Content\themes\metronic\plugins\glyphicons_halflings\fonts\glyphiconshalflings-regular.eot" />
+    <Content Include="Content\themes\metronic\plugins\glyphicons_halflings\fonts\glyphiconshalflings-regular.otf" />
+    <Content Include="Content\themes\metronic\plugins\glyphicons_halflings\fonts\glyphiconshalflings-regular.ttf" />
+    <Content Include="Content\themes\metronic\plugins\glyphicons_halflings\fonts\glyphiconshalflings-regular.woff" />
+    <Content Include="Content\themes\metronic\plugins\glyphicons_halflings\less\halflings.less" />
+    <Content Include="Content\themes\metronic\plugins\glyphicons_halflings\less\reset.less" />
+    <Content Include="Content\themes\metronic\plugins\glyphicons_halflings\less\site.less" />
+    <Content Include="Content\themes\metronic\plugins\glyphicons_halflings\less\style.less" />
+    <Content Include="Content\themes\metronic\plugins\gritter\README.markdown" />
+    <Content Include="Content\themes\metronic\plugins\jquery-easy-pie-chart\jquery.easy-pie-chart.coffee" />
+    <Content Include="Content\themes\metronic\plugins\jquery-easy-pie-chart\Makefile" />
+    <Content Include="Content\themes\metronic\plugins\jquery-easy-pie-chart\Readme.md" />
+    <Content Include="Content\themes\metronic\plugins\jquery-file-upload\blueimp-file-upload.jquery.json" />
+    <Content Include="Content\themes\metronic\plugins\jquery-file-upload\CONTRIBUTING.md" />
+    <Content Include="Content\themes\metronic\plugins\jquery-file-upload\package.json" />
+    <Content Include="Content\themes\metronic\plugins\jquery-file-upload\README.md" />
+    <Content Include="Content\themes\metronic\plugins\jquery-file-upload\server\gae-go\app.yaml" />
+    <Content Include="Content\themes\metronic\plugins\jquery-file-upload\server\gae-go\app\main.go" />
+    <Content Include="Content\themes\metronic\plugins\jquery-file-upload\server\gae-python\app.yaml" />
+    <Content Include="Content\themes\metronic\plugins\jquery-file-upload\server\gae-python\main.py" />
+    <Content Include="Content\themes\metronic\plugins\jquery-file-upload\server\node\package.json" />
+    <Content Include="Content\themes\metronic\plugins\jquery-file-upload\server\php\files\.htaccess" />
+    <Content Include="Content\themes\metronic\plugins\jquery-file-upload\server\php\index.php" />
+    <Content Include="Content\themes\metronic\plugins\jquery-file-upload\server\php\UploadHandler.php" />
+    <Content Include="Content\themes\metronic\plugins\jquery-inputmask\README.md" />
+    <Content Include="Content\themes\metronic\plugins\jquery-knob\README.md" />
+    <Content Include="Content\themes\metronic\plugins\jquery-nestable\README.md" />
+    <Content Include="Content\themes\metronic\plugins\jquery-slimscroll\README.md" />
+    <Content Include="Content\themes\metronic\plugins\jquery-slimscroll\slimScroll.jquery.json" />
+    <Content Include="Content\themes\metronic\plugins\jquery-tags-input\README.md" />
+    <Content Include="Content\themes\metronic\plugins\jquery-ui-touch-punch\README.md" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\captcha\fonts\Anorexia.ttf" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\captcha\images\image.php" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\captcha\image_req.php" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\captcha\index.php" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\captcha\newsession.php" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\captcha\process.php" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\captcha\rand.php" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\form.php" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\form.phps" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\marketo\emails.php" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\marketo\emails.phps" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\milk\emails.php" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\milk\emails.phps" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\milk\users.php" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\demo\milk\users.phps" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\package.json" />
+    <Content Include="Content\themes\metronic\plugins\jquery-validation\README.md" />
+    <Content Include="Content\themes\metronic\plugins\jqvmap\README.md" />
+    <Content Include="Content\themes\metronic\plugins\select2\component.json" />
+    <Content Include="Content\themes\metronic\plugins\select2\LICENSE" />
+    <Content Include="Content\themes\metronic\plugins\select2\README.md" />
+    <Content Include="Content\themes\metronic\plugins\select2\release.sh" />
+    <Content Include="Content\themes\metronic\plugins\select2\select2.jquery.json" />
+    <Content Include="Content\themes\metronic\plugins\select2\select2_locale_en.js.template" />
+    <Content Include="Content\themes\metronic\plugins\uniform\README.textile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:5333/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

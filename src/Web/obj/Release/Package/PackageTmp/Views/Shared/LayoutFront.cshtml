@@ -1,0 +1,158 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="pt-br">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+
+    @Styles.Render("~/Styles/themes/metronic")
+
+    @RenderSection("head", false)
+
+
+    <link rel="shortcut icon" href="favicon.ico" />
+</head>
+<body>
+
+    <header class="bg-dark">
+        <div class="navigation-bar dark">
+            <div class="navigation-bar-content container">
+                <a href="/" class="element">TrÃ¢nsito de SoluÃ§Ãµes</a>
+                <span class="element-divider"></span>
+
+                <a class="element1 pull-menu" href="#"></a>
+                <ul class="element-menu">
+                    <li>
+                        <a class="dropdown-toggle" href="#">Reporte o seu problema</a>
+                        <ul class="dropdown-menu dark" data-role="dropdown">
+                            <li><a href="#">#</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">#</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">#</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="dropdown-toggle" href="#">Veja estatÃ­sticas</a>
+                        <ul class="dropdown-menu dark" data-role="dropdown">
+                            <li><a href="#">#</a></li>
+                            <li><a href="#">#</a></li>
+                            <li><a href="#">#</a></li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="dropdown-toggle fg-yellow">Sobre o projeto</a>
+                        <ul class="dropdown-menu dark" data-role="dropdown">
+                            <li><a href="#">#</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+
+                <div class="no-tablet-portrait no-phone">
+                    <a title="Nuget.org" href="#" class="element place-right"><span class="icon-box-add"></span></a>
+                    <span class="element-divider place-right"></span>
+                    <a title="GitHub" href="#" class="element place-right"><span class="icon-github"></span></a>
+                    <span class="element-divider place-right"></span>
+                    <a title="CSS3 validator" href="#" class="element place-right"><span class="icon-css3"></span></a>
+                    <span class="element-divider place-right"></span>
+                    <div class="element place-right" title="GitHub Stars"><span class="icon-star"></span> <span class="numero-envios">1290 problemas reportados</span></div>
+                    <!--<span class="element-divider place-right"></span>-->
+                    <!--<div class="element place-right" title="GitHub Forks"><span class="icon-share-2"></span> <span class="github-forks">0</span></div>-->
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="">
+        <div style="background: url(img/traffic-jam.jpg) bottom left no-repeat; background-size: cover; height: 250px;">
+            <div class="container" style="padding: 50px 20px">
+                <h1 class="fg-white">Trânsito de Soluções</h1>
+                <h2 class="fg-white">
+                    Conectando as suas solicitações<br>
+                    com as soluções de quem mais entende de trânsito
+                </h2>
+
+            </div>
+        </div>
+    <div id="body">
+        @RenderBody()
+    </div>
+
+        <br>
+        <div class="bg-steel no-tablet-portrait no-phone">
+            <div class="container padding20 fg-white">
+                <div class="carousel bg-transparent no-overflow" id="carousel2">
+                    <div class="slide">
+                        <div class="place-right">
+                            <img src="http://modernui.org.ua/images/css-logo.png"
+                                 alt="" class="span3" />
+                        </div>
+                        <h2 class="fg-white ntm">Developed with advice</h2>
+                        <p class="fg-white">Metro UI CSS developed with the advice of Microsoft to build the user interface and include: general styles, grid, layouts, typography, 20+ components, 300+ built-in icons.</p>
+                        <p class="fg-white">Metro UI CSS build with {LESS}. Metro UI CSS is open source and has MIT licensing model.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-dark">
+                <div class="container" style="padding: 10px 0;">
+
+                    <div class="grid no-margin">
+                        <div class="row no-margin">
+                            <div class="span3 padding10">
+                                <img src="http://metroui.net/images/spface.jpg" alt="" class="polaroid" />
+                            </div>
+                            <div class="span6 padding10">
+                                <h3 class="fg-white">Sobre o projeto</h3>
+                                <p class="fg-white">Lorem ipsum dolor sit amet</p>
+                            </div>
+                            <div class="span3 padding10">
+                                <a class="button danger " style="width: 100%; margin-bottom: 5px" href="#">Lorem</a>
+                                <a class="button success " style="width: 100%; margin-bottom: 5px" href="#">Ipsum</a>
+                                <a class="button info " style="width: 100%; margin-bottom: 5px" href="#">Sit</a>
+                                <a class="button warning " style="width: 100%; margin-bottom: 5px;" href="#">Amet</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container tertiary-text bg-dark fg-white" style="padding: 10px">
+                    Lorem ipsum dolor <a href="#">sit amet</a>
+                </div>
+            </div>
+        </div>
+
+        @Scripts.Render("~/Content/themes/metronic/scripts/global")
+        @RenderSection("Scripts", false);
+        <script src="@Url.Content("~/signalr/hubs")"></script>
+
+        <script>
+            $('.actual-year').html(new Date().getFullYear());
+            jQuery(document).ready(function () {
+                //Index.init();
+                //Index.initJQVMAP(); // init index page's custom scripts
+                //Index.initCalendar(); // init index page's custom scripts
+                //Index.initCharts(); // init index page's custom scripts
+                //Index.initChat();
+                //Index.initMiniCharts();
+                //Index.initDashboardDaterange();
+                //Index.initIntro();
+            });
+        </script>
+        <!-- END JAVASCRIPTS -->
+</body>
+
+<!-- END BODY -->
+</html>

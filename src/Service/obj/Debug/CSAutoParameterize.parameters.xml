@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="GlobalConnection-Web.config Connection String" description="GlobalConnection Connection String used in web.config by the application to access the database." defaultValue="Initial Catalog=CET;Data Source=.\SQLEXPRESS;user id=sa;password=root;Integrated Security=SSPI;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Gabriel\\Source\\Repos\\CET\ -\ GWP\\src\\Service\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='GlobalConnection']/@connectionString" />
+  </parameter>
+</parameters>

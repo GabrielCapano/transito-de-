@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AEAD6D80-663D-484F-BDBC-52B40619EB96}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Model</RootNamespace>
+    <AssemblyName>Model</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.SqlServer.Types, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\BaseModel.cs" />
+    <Compile Include="Base\Geo.cs" />
+    <Compile Include="DatabaseContext.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\_Address\District.cs" />
+    <Compile Include="Models\_Alert\Alert.cs" />
+    <Compile Include="Models\_CEP\Logradouro.cs" />
+    <Compile Include="Models\_CEP\LogradouroEstado.cs" />
+    <Compile Include="Models\_CEP\LogradouroMunicipio.cs" />
+    <Compile Include="Models\_CEP\LogradouroMunicipioCep.cs" />
+    <Compile Include="Models\_CEP\LogradouroPais.cs" />
+    <Compile Include="Models\_CEP\LogradouroPrefixo.cs" />
+    <Compile Include="Models\_CEP\LogradouroBairro.cs" />
+    <Compile Include="Models\_CEP\LogradouroTipo.cs" />
+    <Compile Include="Models\_Address\Address.cs" />
+    <Compile Include="Models\_Address\City.cs" />
+    <Compile Include="Models\_CET\CodigoOcorrencia.cs" />
+    <Compile Include="Models\_CET\Status.cs" />
+    <Compile Include="Models\_CET\Lentidao.cs" />
+    <Compile Include="Models\_CET\LentidaoConsolidado.cs" />
+    <Compile Include="Models\_CET\Ocorrencia.cs" />
+    <Compile Include="Models\_CET\Step.cs" />
+    <Compile Include="Models\_CET\TipoOcorrencia.cs" />
+    <Compile Include="Models\_Email\EmailList.cs" />
+    <Compile Include="Models\_Email\EmailConfiguration.cs" />
+    <Compile Include="Models\_Email\Template.cs" />
+    <Compile Include="Models\_Address\Country.cs" />
+    <Compile Include="Models\_Document\Document.cs" />
+    <Compile Include="Models\_Address\State.cs" />
+    <Compile Include="Models\_Address\StreetType.cs" />
+    <Compile Include="Models\_Language\Language.cs" />
+    <Compile Include="Models\_Language\LanguageKey.cs" />
+    <Compile Include="Models\_Log\TableLog.cs" />
+    <Compile Include="Models\_Master\Master.cs" />
+    <Compile Include="Models\_User\AuthLevel.cs" />
+    <Compile Include="Models\_User\User.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Seed\Seed.cs" />
+    <Compile Include="Validations\ValidateCNPJ.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Seed\CEPSeedFiles\0001-CEP.LogradouroTipo.Table.rar" />
+    <None Include="Seed\CEPSeedFiles\0002-CEP.LogradouroPrefixo.Table.rar" />
+    <None Include="Seed\CEPSeedFiles\0003-CEP.LogradouroPais.Table.rar" />
+    <None Include="Seed\CEPSeedFiles\0004-CEP.LogradouroEstado.Table.rar" />
+    <None Include="Seed\CEPSeedFiles\0005-CEP.LogradouroMunicipio.Table.rar" />
+    <None Include="Seed\CEPSeedFiles\0006-CEP.LogradouroMunicipioCep.Table.rar" />
+    <None Include="Seed\CEPSeedFiles\0007-CEP.LogradouroBairro.Table.rar" />
+    <None Include="Seed\CEPSeedFiles\0008-CEP.Logradouro.Table.rar" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Seed\LanguageSeed.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.10\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.10\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.10\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.10\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
